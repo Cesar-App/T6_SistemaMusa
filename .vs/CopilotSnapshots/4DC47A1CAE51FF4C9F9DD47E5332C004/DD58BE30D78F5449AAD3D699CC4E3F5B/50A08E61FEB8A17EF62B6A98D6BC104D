@@ -1,0 +1,4 @@
+﻿# Copilot Instructions
+
+## Directrices del proyecto
+- Usuario indicó que los archivos generados deben añadirse al proyecto y corrigió que no lo hice. Recordar: cuando cree archivos debo también añadirlos a los .csproj correspondientes.
