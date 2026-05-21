@@ -1,0 +1,176 @@
+﻿namespace CapaPresentacion
+{
+    partial class FormCitas
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        private System.Windows.Forms.Panel panelSidebar;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Panel panelCard;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.DataGridView dgvCitas;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panelSidebar = new System.Windows.Forms.Panel();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.panelCard = new System.Windows.Forms.Panel();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.panelHeader.SuspendLayout();
+            this.panelContent.SuspendLayout();
+            this.panelCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panelSidebar
+            // 
+            this.panelSidebar.BackColor = System.Drawing.Color.White;
+            this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelSidebar.Location = new System.Drawing.Point(0, 72);
+            this.panelSidebar.Name = "panelSidebar";
+            this.panelSidebar.Size = new System.Drawing.Size(260, 608);
+            this.panelSidebar.TabIndex = 0;
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.White;
+            this.panelHeader.Controls.Add(this.lblTitulo);
+            this.panelHeader.Controls.Add(this.txtBuscar);
+            this.panelHeader.Controls.Add(this.btnNuevo);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(1924, 72);
+            this.panelHeader.TabIndex = 1;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Location = new System.Drawing.Point(280, 22);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(343, 38);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Gestión de Citas Médicas";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBuscar.Location = new System.Drawing.Point(2364, 20);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(320, 31);
+            this.txtBuscar.TabIndex = 1;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(88)))), ((int)(((byte)(118)))));
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(2704, 18);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(110, 32);
+            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.Text = "Nuevo Registro";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // panelContent
+            // 
+            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.panelContent.Controls.Add(this.panelCard);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(0, 0);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1924, 680);
+            this.panelContent.TabIndex = 2;
+            // 
+            // panelCard
+            // 
+            this.panelCard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCard.BackColor = System.Drawing.Color.White;
+            this.panelCard.Controls.Add(this.cmbEstado);
+            this.panelCard.Controls.Add(this.dgvCitas);
+            this.panelCard.Location = new System.Drawing.Point(280, 96);
+            this.panelCard.Name = "panelCard";
+            this.panelCard.Padding = new System.Windows.Forms.Padding(16);
+            this.panelCard.Size = new System.Drawing.Size(2524, 440);
+            this.panelCard.TabIndex = 0;
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.Location = new System.Drawing.Point(8, 8);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(160, 28);
+            this.cmbEstado.TabIndex = 0;
+            // 
+            // dgvCitas
+            // 
+            this.dgvCitas.AllowUserToAddRows = false;
+            this.dgvCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCitas.ColumnHeadersHeight = 34;
+            this.dgvCitas.Location = new System.Drawing.Point(0, 60);
+            this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.ReadOnly = true;
+            this.dgvCitas.RowHeadersVisible = false;
+            this.dgvCitas.RowHeadersWidth = 62;
+            this.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCitas.Size = new System.Drawing.Size(1632, 380);
+            this.dgvCitas.TabIndex = 1;
+            // 
+            // FormCitas
+            // 
+            this.ClientSize = new System.Drawing.Size(1924, 680);
+            this.Controls.Add(this.panelSidebar);
+            this.Controls.Add(this.panelHeader);
+            this.Controls.Add(this.panelContent);
+            this.Name = "FormCitas";
+            this.Text = "Gestión de Citas Médicas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            this.panelContent.ResumeLayout(false);
+            this.panelCard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+    }
+}

@@ -1,0 +1,11 @@
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaNegocio\bin\Debug\CapaEntidades.dll
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaNegocio\bin\Debug\CapaEntidades.pdb
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaNegocio\obj\Debug\CapaNego.81B9D119.Up2Date
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaNegocio\obj\Debug\CapaNegocio.pdb

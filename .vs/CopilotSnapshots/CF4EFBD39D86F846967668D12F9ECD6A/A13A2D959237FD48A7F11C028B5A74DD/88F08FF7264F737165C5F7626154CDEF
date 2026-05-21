@@ -1,0 +1,165 @@
+﻿using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class FormCitas : Form
+    {
+        private DataTable citasTable;
+
+        public FormCitas()
+        {
+            InitializeComponent();
+            // asignar manejadores básicos
+            this.Load += FormCitas_Load;
+            this.txtBuscar.TextChanged += txtBuscar_TextChanged;
+            this.cmbEstado.SelectedIndexChanged += cmbEstado_SelectedIndexChanged;
+            this.btnNuevo.Click += btnNuevo_Click;
+            this.dgvCitas.CellFormatting += dgvCitas_CellFormatting;
+            this.dgvCitas.CellContentClick += dgvCitas_CellContentClick;
+        }
+
+        private void FormCitas_Load(object sender, EventArgs e)
+        {
+            InitializeTabla();
+            CargarDatosEjemplo();
+            ConfigurarBindings();
+        }
+
+        private void InitializeTabla()
+        {
+            citasTable = new DataTable();
+            citasTable.Columns.Add("ID Cita", typeof(string));
+            citasTable.Columns.Add("Paciente", typeof(string));
+            citasTable.Columns.Add("Médico", typeof(string));
+            citasTable.Columns.Add("Fecha y Hora", typeof(DateTime));
+            citasTable.Columns.Add("Motivo", typeof(string));
+            citasTable.Columns.Add("Estado", typeof(string));
+        }
+
+        private void CargarDatos()
+        {
+            
+        }
+
+        private void ConfigurarBindings()
+        {
+            dgvCitas.AutoGenerateColumns = false;
+
+            dgvCitas.Columns.Clear();
+            dgvCitas.Columns.Add(CreateTextColumn("ID Cita", "ID Cita", 90));
+            dgvCitas.Columns.Add(CreateTextColumn("Paciente", "Paciente", 200));
+            dgvCitas.Columns.Add(CreateTextColumn("Médico", "Médico", 180));
+            dgvCitas.Columns.Add(CreateTextColumn("Fecha y Hora", "Fecha y Hora", 150, "g"));
+            dgvCitas.Columns.Add(CreateTextColumn("Motivo", "Motivo", 220));
+            dgvCitas.Columns.Add(CreateTextColumn("Estado", "Estado", 110));
+
+            var btnCol = new DataGridViewButtonColumn
+            {
+                HeaderText = "Acciones",
+                Name = "Acciones",
+                Text = "Ver",
+                UseColumnTextForButtonValue = true,
+                Width = 80
+            };
+            dgvCitas.Columns.Add(btnCol);
+
+            dgvCitas.DataSource = citasTable;
+            cmbEstado.Items.Clear();
+            cmbEstado.Items.Add("Todas");
+            foreach (DataRow r in citasTable.DefaultView.ToTable(true, "Estado").Rows)
+                cmbEstado.Items.Add(r["Estado"].ToString());
+            cmbEstado.SelectedIndex = 0;
+
+            // Placeholder en .NET Framework no está disponible por defecto; dejar texto guía
+            txtBuscar.Text = string.Empty;
+        }
+
+        private DataGridViewTextBoxColumn CreateTextColumn(string header, string dataProperty, int width, string format = null)
+        {
+            var c = new DataGridViewTextBoxColumn
+            {
+                HeaderText = header,
+                DataPropertyName = dataProperty,
+                Width = width,
+                SortMode = DataGridViewColumnSortMode.NotSortable
+            };
+            if (!string.IsNullOrEmpty(format))
+                c.DefaultCellStyle.Format = format;
+            return c;
+        }
+
+        private void FiltrarGrilla()
+        {
+            var filtro = "1 = 1";
+            if (!string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                string q = txtBuscar.Text.Replace("'", "''");
+                filtro += $" AND ([ID Cita] LIKE '%{q}%' OR [Paciente] LIKE '%{q}%' OR [Médico] LIKE '%{q}%' OR Motivo LIKE '%{q}%')";
+            }
+
+            if (cmbEstado.SelectedIndex > 0 && cmbEstado.SelectedItem != null)
+            {
+                string estado = cmbEstado.SelectedItem.ToString().Replace("'", "''");
+                filtro += $" AND Estado = '{estado}'";
+            }
+
+            (dgvCitas.DataSource as DataTable).DefaultView.RowFilter = filtro.Replace("1 = 1 AND ", "");
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarGrilla();
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarGrilla();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Abrir formulario para crear nuevo registro.", "Nuevo Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dgvCitas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvCitas.Columns[e.ColumnIndex].HeaderText == "Estado" && e.Value != null)
+            {
+                string estado = e.Value.ToString();
+                var cell = dgvCitas.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                switch (estado)
+                {
+                    case "Pendiente":
+                        cell.Style.BackColor = Color.FromArgb(255, 249, 215);
+                        cell.Style.ForeColor = Color.FromArgb(102, 85, 0);
+                        break;
+                    case "Confirmada":
+                        cell.Style.BackColor = Color.FromArgb(221, 255, 235);
+                        cell.Style.ForeColor = Color.FromArgb(0, 102, 51);
+                        break;
+                    case "Atendido":
+                        cell.Style.BackColor = Color.FromArgb(235, 243, 255);
+                        cell.Style.ForeColor = Color.FromArgb(10, 67, 165);
+                        break;
+                    default:
+                        cell.Style.BackColor = Color.White;
+                        cell.Style.ForeColor = Color.Black;
+                        break;
+                }
+            }
+        }
+
+        private void dgvCitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            if (dgvCitas.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+                var id = dgvCitas.Rows[e.RowIndex].Cells["ID Cita"].Value?.ToString();
+                MessageBox.Show($"Acciones para la cita {id}", "Acciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+    }
+}

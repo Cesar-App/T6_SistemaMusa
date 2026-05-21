@@ -1,0 +1,270 @@
+﻿namespace CapaPresentacion
+{
+    partial class FrmLogin
+    {
+        /// <summary>
+        /// Variable del diseñador necesaria.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Limpiar los recursos que se estén usando.
+        /// </summary>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código generado por el Diseñador de Windows Forms
+
+        /// <summary>
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cardPanel = new System.Windows.Forms.Panel();
+            this.lblCircle = new System.Windows.Forms.Label();
+            this.lblHospital = new System.Windows.Forms.Label();
+            this.lblHospitalSub = new System.Windows.Forms.Label();
+            this.separator = new System.Windows.Forms.Panel();
+            this.panelUser = new System.Windows.Forms.Panel();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.panelPass = new System.Windows.Forms.Panel();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.picShow = new System.Windows.Forms.PictureBox();
+            this.chkRemember = new System.Windows.Forms.CheckBox();
+            this.linkRecover = new System.Windows.Forms.LinkLabel();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.lblFooter = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.cardPanel.SuspendLayout();
+            this.panelUser.SuspendLayout();
+            this.panelPass.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShow)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(89)))), ((int)(((byte)(117)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1244, 260);
+            this.panel1.TabIndex = 0;
+            // 
+            // cardPanel
+            // 
+            this.cardPanel.BackColor = System.Drawing.Color.White;
+            this.cardPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardPanel.Controls.Add(this.lblCircle);
+            this.cardPanel.Controls.Add(this.lblHospital);
+            this.cardPanel.Controls.Add(this.lblHospitalSub);
+            this.cardPanel.Controls.Add(this.separator);
+            this.cardPanel.Controls.Add(this.panelUser);
+            this.cardPanel.Controls.Add(this.panelPass);
+            this.cardPanel.Controls.Add(this.chkRemember);
+            this.cardPanel.Controls.Add(this.linkRecover);
+            this.cardPanel.Controls.Add(this.btnLogin);
+            this.cardPanel.Controls.Add(this.lblFooter);
+            this.cardPanel.Location = new System.Drawing.Point(372, 150);
+            this.cardPanel.Name = "cardPanel";
+            this.cardPanel.Size = new System.Drawing.Size(500, 450);
+            this.cardPanel.TabIndex = 1;
+            // 
+            // lblCircle
+            // 
+            this.lblCircle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
+            this.lblCircle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblCircle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(89)))), ((int)(((byte)(117)))));
+            this.lblCircle.Location = new System.Drawing.Point(210, 18);
+            this.lblCircle.Name = "lblCircle";
+            this.lblCircle.Size = new System.Drawing.Size(80, 80);
+            this.lblCircle.TabIndex = 0;
+            this.lblCircle.Text = "H";
+            this.lblCircle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHospital
+            // 
+            this.lblHospital.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblHospital.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(89)))), ((int)(((byte)(117)))));
+            this.lblHospital.Location = new System.Drawing.Point(40, 105);
+            this.lblHospital.Name = "lblHospital";
+            this.lblHospital.Size = new System.Drawing.Size(420, 25);
+            this.lblHospital.TabIndex = 1;
+            this.lblHospital.Text = "HOSPITAL REGIONAL";
+            this.lblHospital.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHospitalSub
+            // 
+            this.lblHospitalSub.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblHospitalSub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(121)))), ((int)(((byte)(170)))));
+            this.lblHospitalSub.Location = new System.Drawing.Point(40, 130);
+            this.lblHospitalSub.Name = "lblHospitalSub";
+            this.lblHospitalSub.Size = new System.Drawing.Size(420, 25);
+            this.lblHospitalSub.TabIndex = 2;
+            this.lblHospitalSub.Text = "DR. ANTONIO MUSA";
+            this.lblHospitalSub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // separator
+            // 
+            this.separator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.separator.Location = new System.Drawing.Point(0, 170);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(498, 1);
+            this.separator.TabIndex = 3;
+            // 
+            // panelUser
+            // 
+            this.panelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.panelUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelUser.Controls.Add(this.txtUser);
+            this.panelUser.Location = new System.Drawing.Point(40, 190);
+            this.panelUser.Name = "panelUser";
+            this.panelUser.Padding = new System.Windows.Forms.Padding(10);
+            this.panelUser.Size = new System.Drawing.Size(420, 44);
+            this.panelUser.TabIndex = 4;
+            // 
+            // txtUser
+            // 
+            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtUser.ForeColor = System.Drawing.Color.Gray;
+            this.txtUser.Location = new System.Drawing.Point(14, 12);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(372, 27);
+            this.txtUser.TabIndex = 0;
+            this.txtUser.Text = "Usuario o Cédula";
+            this.txtUser.GotFocus += new System.EventHandler(this.txtUser_GotFocus);
+            this.txtUser.LostFocus += new System.EventHandler(this.txtUser_LostFocus);
+            // 
+            // panelPass
+            // 
+            this.panelPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.panelPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPass.Controls.Add(this.txtPassword);
+            this.panelPass.Controls.Add(this.picShow);
+            this.panelPass.Location = new System.Drawing.Point(40, 246);
+            this.panelPass.Name = "panelPass";
+            this.panelPass.Padding = new System.Windows.Forms.Padding(10);
+            this.panelPass.Size = new System.Drawing.Size(420, 44);
+            this.panelPass.TabIndex = 5;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPassword.ForeColor = System.Drawing.Color.Gray;
+            this.txtPassword.Location = new System.Drawing.Point(14, 12);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(340, 27);
+            this.txtPassword.TabIndex = 0;
+            this.txtPassword.Text = "Contraseña";
+            this.txtPassword.GotFocus += new System.EventHandler(this.txtPassword_GotFocus);
+            this.txtPassword.LostFocus += new System.EventHandler(this.txtPassword_LostFocus);
+            // 
+            // picShow
+            // 
+            this.picShow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picShow.Location = new System.Drawing.Point(364, 10);
+            this.picShow.Name = "picShow";
+            this.picShow.Size = new System.Drawing.Size(30, 24);
+            this.picShow.TabIndex = 1;
+            this.picShow.TabStop = false;
+            this.picShow.Click += new System.EventHandler(this.picShow_Click);
+            // 
+            // chkRemember
+            // 
+            this.chkRemember.AutoSize = true;
+            this.chkRemember.Location = new System.Drawing.Point(48, 305);
+            this.chkRemember.Name = "chkRemember";
+            this.chkRemember.Size = new System.Drawing.Size(110, 24);
+            this.chkRemember.TabIndex = 6;
+            this.chkRemember.Text = "Recordar usuario";
+            this.chkRemember.UseVisualStyleBackColor = true;
+            // 
+            // linkRecover
+            // 
+            this.linkRecover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkRecover.Location = new System.Drawing.Point(320, 304);
+            this.linkRecover.Name = "linkRecover";
+            this.linkRecover.Size = new System.Drawing.Size(140, 24);
+            this.linkRecover.TabIndex = 7;
+            this.linkRecover.TabStop = true;
+            this.linkRecover.Text = "Recuperar clave";
+            this.linkRecover.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(89)))), ((int)(((byte)(117)))));
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(40, 345);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(420, 45);
+            this.btnLogin.TabIndex = 8;
+            this.btnLogin.Text = "Iniciar Sesión";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            // 
+            // lblFooter
+            // 
+            this.lblFooter.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblFooter.ForeColor = System.Drawing.Color.Gray;
+            this.lblFooter.Location = new System.Drawing.Point(40, 403);
+            this.lblFooter.Name = "lblFooter";
+            this.lblFooter.Size = new System.Drawing.Size(420, 36);
+            this.lblFooter.TabIndex = 9;
+            this.lblFooter.Text = "© 2024 Hospital Regional Dr. Antonio Musa. Todos los derechos reservados.";
+            this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FrmLogin
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.ClientSize = new System.Drawing.Size(1244, 637);
+            this.Controls.Add(this.cardPanel);
+            this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FrmLogin";
+            this.ShowIcon = false;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.panel1.ResumeLayout(false);
+            this.cardPanel.ResumeLayout(false);
+            this.panelUser.ResumeLayout(false);
+            this.panelUser.PerformLayout();
+            this.panelPass.ResumeLayout(false);
+            this.panelPass.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShow)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel cardPanel;
+        private System.Windows.Forms.Label lblCircle;
+        private System.Windows.Forms.Label lblHospital;
+        private System.Windows.Forms.Label lblHospitalSub;
+        private System.Windows.Forms.Panel separator;
+        private System.Windows.Forms.Panel panelUser;
+        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.Panel panelPass;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.PictureBox picShow;
+        private System.Windows.Forms.CheckBox chkRemember;
+        private System.Windows.Forms.LinkLabel linkRecover;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label lblFooter;
+    }
+}
+

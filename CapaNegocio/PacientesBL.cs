@@ -1,4 +1,5 @@
 ﻿using CapaEntidades;
+using CapaDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,8 +33,6 @@ namespace CapaNegocio
                 throw new System.Exception("La cédula del paciente es obligatoria.");
             return PacientesDAL.Actualizar(obj);
         }
-
-        // Baja lógica: el SP hace UPDATE estado = 0
         public int Eliminar(int id) => PacientesDAL.Eliminar(id);
     }
 }
