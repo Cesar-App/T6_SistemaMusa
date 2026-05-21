@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="CitasBL.cs" />
     <Compile Include="EspecialidadesBL.cs" />
-    <Compile Include="FuncionesBL.cs" />
     <Compile Include="HistorialCitasBL.cs" />
     <Compile Include="HorariosMedicosBL.cs" />
     <Compile Include="MedicosBL.cs" />
@@ -51,7 +50,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolesBL.cs" />
     <Compile Include="UsuariosBL.cs" />
-    <Compile Include="VistasBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">

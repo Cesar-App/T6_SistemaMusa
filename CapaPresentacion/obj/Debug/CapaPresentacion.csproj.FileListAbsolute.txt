@@ -16,3 +16,4 @@ C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPr
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FrmLogin.resources
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FormCitas.resources
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FormHorarios.resources

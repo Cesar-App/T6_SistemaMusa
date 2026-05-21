@@ -45,7 +45,6 @@
     <Compile Include="CitasDAL.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="EspecialidadesDAL.cs" />
-    <Compile Include="FuncionesDAL.cs" />
     <Compile Include="HistorialCitasDAL.cs" />
     <Compile Include="HorariosMedicosDAL.cs" />
     <Compile Include="MedicosDAL.cs" />
@@ -53,7 +52,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolesDAL.cs" />
     <Compile Include="UsuariosDAL.cs" />
-    <Compile Include="VistasDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">

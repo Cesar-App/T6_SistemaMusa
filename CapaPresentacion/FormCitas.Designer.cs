@@ -47,13 +47,22 @@
         private void InitializeComponent()
         {
             this.panelSidebar = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.separator = new System.Windows.Forms.Panel();
+            this.btnRoles = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnMedicos = new System.Windows.Forms.Button();
+            this.btnPacientes = new System.Windows.Forms.Button();
+            this.btnHistorial = new System.Windows.Forms.Button();
+            this.btnCitas = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pbHome = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -70,50 +79,74 @@
             this.cmbEstadoInsert = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panelCard = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.separator = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEspecialidades = new System.Windows.Forms.Button();
+            this.btnHorarios = new System.Windows.Forms.Button();
             this.panelSidebar.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             this.panelContent.SuspendLayout();
             this.panelInsert.SuspendLayout();
             this.panelCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSidebar
             // 
             this.panelSidebar.BackColor = System.Drawing.Color.White;
             this.panelSidebar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSidebar.Controls.Add(this.btnHorarios);
+            this.panelSidebar.Controls.Add(this.btnEspecialidades);
             this.panelSidebar.Controls.Add(this.label5);
             this.panelSidebar.Controls.Add(this.separator);
-            this.panelSidebar.Controls.Add(this.button6);
+            this.panelSidebar.Controls.Add(this.btnRoles);
             this.panelSidebar.Controls.Add(this.panel1);
-            this.panelSidebar.Controls.Add(this.button5);
-            this.panelSidebar.Controls.Add(this.button4);
-            this.panelSidebar.Controls.Add(this.button3);
-            this.panelSidebar.Controls.Add(this.button2);
-            this.panelSidebar.Controls.Add(this.button1);
+            this.panelSidebar.Controls.Add(this.btnUsuarios);
+            this.panelSidebar.Controls.Add(this.btnMedicos);
+            this.panelSidebar.Controls.Add(this.btnPacientes);
+            this.panelSidebar.Controls.Add(this.btnHistorial);
+            this.panelSidebar.Controls.Add(this.btnCitas);
             this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSidebar.Location = new System.Drawing.Point(0, 72);
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(260, 836);
             this.panelSidebar.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label5.Location = new System.Drawing.Point(17, 377);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(211, 38);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Administracion";
+            // 
+            // separator
+            // 
+            this.separator.BackColor = System.Drawing.Color.SteelBlue;
+            this.separator.Location = new System.Drawing.Point(-1, 363);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(261, 10);
+            this.separator.TabIndex = 11;
+            // 
+            // btnRoles
+            // 
+            this.btnRoles.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRoles.Location = new System.Drawing.Point(24, 473);
+            this.btnRoles.Name = "btnRoles";
+            this.btnRoles.Size = new System.Drawing.Size(213, 38);
+            this.btnRoles.TabIndex = 10;
+            this.btnRoles.Text = "Roles";
+            this.btnRoles.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -122,62 +155,112 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Location = new System.Drawing.Point(-1, 513);
+            this.panel1.Location = new System.Drawing.Point(-1, 552);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 110);
             this.panel1.TabIndex = 9;
             // 
-            // button5
+            // pictureBox4
             // 
-            this.button5.Location = new System.Drawing.Point(12, 380);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(231, 49);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.Salir;
+            this.pictureBox4.Location = new System.Drawing.Point(196, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(53, 46);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
             // 
-            // button4
+            // label4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 255);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(231, 49);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(66, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 28);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "RolUsuario";
             // 
-            // button3
+            // label3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 177);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(231, 49);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label3.Location = new System.Drawing.Point(66, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(161, 28);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "NombreUsuario";
             // 
-            // button2
+            // pictureBox3
             // 
-            this.button2.Location = new System.Drawing.Point(12, 98);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(231, 49);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources._5540603_removebg_preview;
+            this.pictureBox3.Location = new System.Drawing.Point(11, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(49, 56);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
             // 
-            // button1
+            // btnUsuarios
             // 
-            this.button1.Location = new System.Drawing.Point(12, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 49);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnUsuarios.Location = new System.Drawing.Point(24, 418);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(213, 38);
+            this.btnUsuarios.TabIndex = 8;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            // 
+            // btnMedicos
+            // 
+            this.btnMedicos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnMedicos.Location = new System.Drawing.Point(24, 186);
+            this.btnMedicos.Name = "btnMedicos";
+            this.btnMedicos.Size = new System.Drawing.Size(213, 38);
+            this.btnMedicos.TabIndex = 7;
+            this.btnMedicos.Text = "Medicos";
+            this.btnMedicos.UseVisualStyleBackColor = true;
+            // 
+            // btnPacientes
+            // 
+            this.btnPacientes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnPacientes.Location = new System.Drawing.Point(24, 127);
+            this.btnPacientes.Name = "btnPacientes";
+            this.btnPacientes.Size = new System.Drawing.Size(213, 38);
+            this.btnPacientes.TabIndex = 6;
+            this.btnPacientes.Text = "Pacientes";
+            this.btnPacientes.UseVisualStyleBackColor = true;
+            // 
+            // btnHistorial
+            // 
+            this.btnHistorial.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnHistorial.Location = new System.Drawing.Point(24, 70);
+            this.btnHistorial.Name = "btnHistorial";
+            this.btnHistorial.Size = new System.Drawing.Size(213, 38);
+            this.btnHistorial.TabIndex = 5;
+            this.btnHistorial.Text = "Historial de Citas";
+            this.btnHistorial.UseVisualStyleBackColor = true;
+            // 
+            // btnCitas
+            // 
+            this.btnCitas.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCitas.Location = new System.Drawing.Point(24, 15);
+            this.btnCitas.Name = "btnCitas";
+            this.btnCitas.Size = new System.Drawing.Size(213, 38);
+            this.btnCitas.TabIndex = 4;
+            this.btnCitas.Text = "Citas Medicas";
+            this.btnCitas.UseVisualStyleBackColor = true;
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.White;
             this.panelHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelHeader.Controls.Add(this.pictureBox5);
-            this.panelHeader.Controls.Add(this.pictureBox2);
+            this.panelHeader.Controls.Add(this.pbHome);
             this.panelHeader.Controls.Add(this.label2);
             this.panelHeader.Controls.Add(this.textBox1);
             this.panelHeader.Controls.Add(this.lblTitulo);
@@ -188,6 +271,30 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1286, 72);
             this.panelHeader.TabIndex = 1;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::CapaPresentacion.Properties.Resources.Buscador;
+            this.pictureBox5.Location = new System.Drawing.Point(1227, 20);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(46, 33);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pbHome
+            // 
+            this.pbHome.BackColor = System.Drawing.Color.Transparent;
+            this.pbHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbHome.Image = global::CapaPresentacion.Properties.Resources.Musa1;
+            this.pbHome.Location = new System.Drawing.Point(5, 3);
+            this.pbHome.Name = "pbHome";
+            this.pbHome.Size = new System.Drawing.Size(256, 62);
+            this.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHome.TabIndex = 4;
+            this.pbHome.TabStop = false;
             // 
             // label2
             // 
@@ -352,6 +459,18 @@
             this.panelCard.Size = new System.Drawing.Size(1886, 330);
             this.panelCard.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Embudo;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 22);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // cmbEstado
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -376,114 +495,26 @@
             this.dgvCitas.Size = new System.Drawing.Size(994, 251);
             this.dgvCitas.TabIndex = 1;
             // 
-            // label3
+            // btnEspecialidades
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label3.Location = new System.Drawing.Point(66, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 28);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "NombreUsuario";
+            this.btnEspecialidades.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEspecialidades.Location = new System.Drawing.Point(24, 302);
+            this.btnEspecialidades.Name = "btnEspecialidades";
+            this.btnEspecialidades.Size = new System.Drawing.Size(213, 38);
+            this.btnEspecialidades.TabIndex = 12;
+            this.btnEspecialidades.Text = "Especialidades";
+            this.btnEspecialidades.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // btnHorarios
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(66, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 28);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "RolUsuario";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(12, 448);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(231, 49);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // separator
-            // 
-            this.separator.BackColor = System.Drawing.Color.SteelBlue;
-            this.separator.Location = new System.Drawing.Point(-1, 324);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(261, 10);
-            this.separator.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label5.Location = new System.Drawing.Point(17, 338);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(211, 38);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Administracion";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.Salir;
-            this.pictureBox4.Location = new System.Drawing.Point(196, 12);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(53, 46);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources._5540603_removebg_preview;
-            this.pictureBox3.Location = new System.Drawing.Point(11, 6);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(49, 56);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = global::CapaPresentacion.Properties.Resources.Buscador;
-            this.pictureBox5.Location = new System.Drawing.Point(1227, 20);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(46, 33);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.Musa1;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(256, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Embudo;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 22);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.btnHorarios.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnHorarios.Location = new System.Drawing.Point(24, 244);
+            this.btnHorarios.Name = "btnHorarios";
+            this.btnHorarios.Size = new System.Drawing.Size(213, 38);
+            this.btnHorarios.TabIndex = 13;
+            this.btnHorarios.Text = "Horarios";
+            this.btnHorarios.UseVisualStyleBackColor = true;
+            this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
             // 
             // FormCitas
             // 
@@ -501,18 +532,18 @@
             this.panelSidebar.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             this.panelContent.ResumeLayout(false);
             this.panelInsert.ResumeLayout(false);
             this.panelInsert.PerformLayout();
             this.panelCard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -523,20 +554,22 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnPacientes;
+        private System.Windows.Forms.Button btnHistorial;
+        private System.Windows.Forms.Button btnCitas;
+        private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnMedicos;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbHome;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnRoles;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel separator;
+        private System.Windows.Forms.Button btnHorarios;
+        private System.Windows.Forms.Button btnEspecialidades;
     }
 }

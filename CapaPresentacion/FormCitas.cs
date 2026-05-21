@@ -11,7 +11,6 @@ namespace CapaPresentacion
     {
         private DataTable citasTable;
         private CitasBL citasBL = new CitasBL();
-        private VistasBL vistabl = new VistasBL();
         public FormCitas()
         {
             InitializeComponent();
@@ -168,6 +167,12 @@ namespace CapaPresentacion
         private void FormCitas_Load_1(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            FormHorarios formHorarios = new FormHorarios();
+            formHorarios.ShowDialog();
         }
     }
 }
