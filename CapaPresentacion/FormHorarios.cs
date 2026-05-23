@@ -183,5 +183,11 @@ namespace CapaPresentacion
             FormCitas formCitas = new FormCitas();
             formCitas.ShowDialog();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            FormInicio formInicio = new FormInicio();
+            formInicio.ShowDialog();
+        }
     }
 }

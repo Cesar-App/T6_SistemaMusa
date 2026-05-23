@@ -174,5 +174,11 @@ namespace CapaPresentacion
             FormHorarios formHorarios = new FormHorarios();
             formHorarios.ShowDialog();
         }
+
+        private void pbHome_Click(object sender, EventArgs e)
+        {
+            FormInicio formInicio = new FormInicio();
+            formInicio.ShowDialog();
+        }
     }
 }

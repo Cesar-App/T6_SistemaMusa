@@ -49,6 +49,8 @@
         private void InitializeComponent()
         {
             this.panelSidebar = new System.Windows.Forms.Panel();
+            this.btnHorarios = new System.Windows.Forms.Button();
+            this.btnEspecialidades = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.separator = new System.Windows.Forms.Panel();
             this.btnRoles = new System.Windows.Forms.Button();
@@ -86,8 +88,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.dgvHorarios = new System.Windows.Forms.DataGridView();
-            this.btnEspecialidades = new System.Windows.Forms.Button();
-            this.btnHorarios = new System.Windows.Forms.Button();
             this.panelSidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -122,6 +122,27 @@
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(260, 836);
             this.panelSidebar.TabIndex = 0;
+            // 
+            // btnHorarios
+            // 
+            this.btnHorarios.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnHorarios.Location = new System.Drawing.Point(22, 236);
+            this.btnHorarios.Name = "btnHorarios";
+            this.btnHorarios.Size = new System.Drawing.Size(213, 38);
+            this.btnHorarios.TabIndex = 13;
+            this.btnHorarios.Text = "Horarios";
+            this.btnHorarios.UseVisualStyleBackColor = true;
+            this.btnHorarios.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // btnEspecialidades
+            // 
+            this.btnEspecialidades.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEspecialidades.Location = new System.Drawing.Point(22, 296);
+            this.btnEspecialidades.Name = "btnEspecialidades";
+            this.btnEspecialidades.Size = new System.Drawing.Size(213, 38);
+            this.btnEspecialidades.TabIndex = 12;
+            this.btnEspecialidades.Text = "Especialidades";
+            this.btnEspecialidades.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -159,7 +180,7 @@
             this.panel1.Controls.Add(this.lbRolUsuario);
             this.panel1.Controls.Add(this.lbNombreUsuario);
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Location = new System.Drawing.Point(-3, 541);
+            this.panel1.Location = new System.Drawing.Point(-1, 541);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 110);
             this.panel1.TabIndex = 9;
@@ -300,6 +321,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label2
             // 
@@ -527,27 +549,6 @@
             this.dgvHorarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHorarios.Size = new System.Drawing.Size(1173, 251);
             this.dgvHorarios.TabIndex = 1;
-            // 
-            // btnEspecialidades
-            // 
-            this.btnEspecialidades.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEspecialidades.Location = new System.Drawing.Point(22, 296);
-            this.btnEspecialidades.Name = "btnEspecialidades";
-            this.btnEspecialidades.Size = new System.Drawing.Size(213, 38);
-            this.btnEspecialidades.TabIndex = 12;
-            this.btnEspecialidades.Text = "Especialidades";
-            this.btnEspecialidades.UseVisualStyleBackColor = true;
-            // 
-            // btnHorarios
-            // 
-            this.btnHorarios.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnHorarios.Location = new System.Drawing.Point(22, 236);
-            this.btnHorarios.Name = "btnHorarios";
-            this.btnHorarios.Size = new System.Drawing.Size(213, 38);
-            this.btnHorarios.TabIndex = 13;
-            this.btnHorarios.Text = "Horarios";
-            this.btnHorarios.UseVisualStyleBackColor = true;
-            this.btnHorarios.Click += new System.EventHandler(this.button8_Click);
             // 
             // FormHorarios
             // 

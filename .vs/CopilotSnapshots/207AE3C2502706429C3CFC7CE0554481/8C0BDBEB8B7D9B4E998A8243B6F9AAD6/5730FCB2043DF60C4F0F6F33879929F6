@@ -1,0 +1,61 @@
+﻿using CapaEntidades;
+using CapaNegocio;
+using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class FormInicio : Form
+    {
+        private DataTable citasTable;
+        private CitasBL citasBL = new CitasBL();
+        public FormInicio()
+        {
+            InitializeComponent();
+        }
+
+        private void FormCitas_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private DataGridViewTextBoxColumn CreateTextColumn(string header, string dataProperty, int width, string format = null)
+        {
+            var c = new DataGridViewTextBoxColumn
+            {
+                HeaderText = header,
+                DataPropertyName = dataProperty,
+                Width = width,
+                SortMode = DataGridViewColumnSortMode.NotSortable
+            };
+            if (!string.IsNullOrEmpty(format))
+                c.DefaultCellStyle.Format = format;
+            return c;
+        }
+
+        private void FormCitas_Load_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            FormHorarios formHorarios = new FormHorarios();
+            formHorarios.ShowDialog();
+        }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            FormCitas formCitas = new FormCitas();
+            formCitas.ShowDialog();
+        }
+
+        private void pbHome_Click(object sender, EventArgs e)
+        {
+            FormInicio formInicio = new FormInicio();
+            formInicio.ShowDialog();
+        }
+    }
+}

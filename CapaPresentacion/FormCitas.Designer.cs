@@ -47,6 +47,8 @@
         private void InitializeComponent()
         {
             this.panelSidebar = new System.Windows.Forms.Panel();
+            this.btnHorarios = new System.Windows.Forms.Button();
+            this.btnEspecialidades = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.separator = new System.Windows.Forms.Panel();
             this.btnRoles = new System.Windows.Forms.Button();
@@ -70,6 +72,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelInsert = new System.Windows.Forms.Panel();
+            this.lblDia = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboPaciente = new System.Windows.Forms.ComboBox();
             this.cboMedico = new System.Windows.Forms.ComboBox();
@@ -82,8 +85,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.btnEspecialidades = new System.Windows.Forms.Button();
-            this.btnHorarios = new System.Windows.Forms.Button();
             this.panelSidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -118,6 +119,27 @@
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(260, 836);
             this.panelSidebar.TabIndex = 0;
+            // 
+            // btnHorarios
+            // 
+            this.btnHorarios.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnHorarios.Location = new System.Drawing.Point(24, 244);
+            this.btnHorarios.Name = "btnHorarios";
+            this.btnHorarios.Size = new System.Drawing.Size(213, 38);
+            this.btnHorarios.TabIndex = 13;
+            this.btnHorarios.Text = "Horarios";
+            this.btnHorarios.UseVisualStyleBackColor = true;
+            this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
+            // 
+            // btnEspecialidades
+            // 
+            this.btnEspecialidades.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEspecialidades.Location = new System.Drawing.Point(24, 302);
+            this.btnEspecialidades.Name = "btnEspecialidades";
+            this.btnEspecialidades.Size = new System.Drawing.Size(213, 38);
+            this.btnEspecialidades.TabIndex = 12;
+            this.btnEspecialidades.Text = "Especialidades";
+            this.btnEspecialidades.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -295,6 +317,7 @@
             this.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbHome.TabIndex = 4;
             this.pbHome.TabStop = false;
+            this.pbHome.Click += new System.EventHandler(this.pbHome_Click);
             // 
             // label2
             // 
@@ -361,6 +384,7 @@
             // 
             this.panelInsert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelInsert.Controls.Add(this.lblDia);
             this.panelInsert.Controls.Add(this.label1);
             this.panelInsert.Controls.Add(this.cboPaciente);
             this.panelInsert.Controls.Add(this.cboMedico);
@@ -373,6 +397,16 @@
             this.panelInsert.Name = "panelInsert";
             this.panelInsert.Size = new System.Drawing.Size(871, 169);
             this.panelInsert.TabIndex = 2;
+            // 
+            // lblDia
+            // 
+            this.lblDia.AutoSize = true;
+            this.lblDia.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDia.Location = new System.Drawing.Point(300, 42);
+            this.lblDia.Name = "lblDia";
+            this.lblDia.Size = new System.Drawing.Size(40, 21);
+            this.lblDia.TabIndex = 9;
+            this.lblDia.Text = "Día:";
             // 
             // label1
             // 
@@ -495,27 +529,6 @@
             this.dgvCitas.Size = new System.Drawing.Size(994, 251);
             this.dgvCitas.TabIndex = 1;
             // 
-            // btnEspecialidades
-            // 
-            this.btnEspecialidades.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEspecialidades.Location = new System.Drawing.Point(24, 302);
-            this.btnEspecialidades.Name = "btnEspecialidades";
-            this.btnEspecialidades.Size = new System.Drawing.Size(213, 38);
-            this.btnEspecialidades.TabIndex = 12;
-            this.btnEspecialidades.Text = "Especialidades";
-            this.btnEspecialidades.UseVisualStyleBackColor = true;
-            // 
-            // btnHorarios
-            // 
-            this.btnHorarios.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnHorarios.Location = new System.Drawing.Point(24, 244);
-            this.btnHorarios.Name = "btnHorarios";
-            this.btnHorarios.Size = new System.Drawing.Size(213, 38);
-            this.btnHorarios.TabIndex = 13;
-            this.btnHorarios.Text = "Horarios";
-            this.btnHorarios.UseVisualStyleBackColor = true;
-            this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
-            // 
             // FormCitas
             // 
             this.ClientSize = new System.Drawing.Size(1286, 908);
@@ -526,6 +539,7 @@
             this.MinimizeBox = false;
             this.Name = "FormCitas";
             this.ShowIcon = false;
+            this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormCitas_Load_1);
             this.panelSidebar.ResumeLayout(false);
@@ -571,5 +585,6 @@
         private System.Windows.Forms.Panel separator;
         private System.Windows.Forms.Button btnHorarios;
         private System.Windows.Forms.Button btnEspecialidades;
+        private System.Windows.Forms.Label lblDia;
     }
 }

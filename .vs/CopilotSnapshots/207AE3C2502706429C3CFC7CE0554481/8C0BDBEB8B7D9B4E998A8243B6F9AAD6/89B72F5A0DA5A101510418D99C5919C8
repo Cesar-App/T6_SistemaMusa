@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class FrmLogin : Form
+    {
+        public FrmLogin()
+        {
+            InitializeComponent();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            CenterCard();
+            txtPassword.UseSystemPasswordChar = false;
+        }
+
+        private void CenterCard()
+        {
+            // Center the cardPanel horizontally and place it slightly below the top panel
+            int x = (this.ClientSize.Width - this.cardPanel.Width) / 2;
+            int y = this.panel1.Height - 40;
+            this.cardPanel.Location = new Point(Math.Max(20, x), Math.Max(80, y));
+        }
+
+        private void txtUser_GotFocus(object sender, EventArgs e)
+        {
+            if (txtUser.Text == "Usuario o Cédula")
+            {
+                txtUser.Text = string.Empty;
+                txtUser.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtUser_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtUser.Text))
+            {
+                txtUser.Text = "Usuario o Cédula";
+                txtUser.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtPassword_GotFocus(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Contraseña")
+            {
+                txtPassword.Text = string.Empty;
+                txtPassword.UseSystemPasswordChar = true;
+                txtPassword.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPassword_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.Text = "Contraseña";
+                txtPassword.ForeColor = Color.Gray;
+            }
+        }
+
+        private void picShow_Click(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
+            picShow.Image = txtPassword.UseSystemPasswordChar ? Properties.Resources.eye_close : Properties.Resources.eye_open;
+        }
+
+        private void lblFooter_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

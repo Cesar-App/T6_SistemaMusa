@@ -46,6 +46,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="EspecialidadesDAL.cs" />
     <Compile Include="HistorialCitasDAL.cs" />
+    <Compile Include="Historial_PacientesDAL.cs" />
     <Compile Include="HorariosMedicosDAL.cs" />
     <Compile Include="MedicosDAL.cs" />
     <Compile Include="PacientesDAL.cs" />

@@ -44,6 +44,7 @@
     <Compile Include="CitasBL.cs" />
     <Compile Include="EspecialidadesBL.cs" />
     <Compile Include="HistorialCitasBL.cs" />
+    <Compile Include="Historial_PacientesBL.cs" />
     <Compile Include="HorariosMedicosBL.cs" />
     <Compile Include="MedicosBL.cs" />
     <Compile Include="PacientesBL.cs" />
