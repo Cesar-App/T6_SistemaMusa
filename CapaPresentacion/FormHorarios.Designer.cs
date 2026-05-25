@@ -196,6 +196,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // lbRolUsuario
             // 
@@ -347,9 +348,10 @@
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(312, 22);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(452, 45);
+            this.lblTitulo.Size = new System.Drawing.Size(455, 45);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Gestión de Horarios Médicas";
+            this.lblTitulo.Text = "Gestión de Horarios Médicos";
+            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // txtBuscar
             // 
@@ -388,6 +390,8 @@
             // 
             this.panelInsert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelInsert.BackColor = System.Drawing.Color.White;
+            this.panelInsert.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelInsert.Controls.Add(this.lbIngresoDatos);
             this.panelInsert.Controls.Add(this.lblDia);
             this.panelInsert.Controls.Add(this.cmbDiaSemana);
@@ -398,16 +402,16 @@
             this.panelInsert.Controls.Add(this.lblHoraFin);
             this.panelInsert.Controls.Add(this.dtpHoraFin);
             this.panelInsert.Controls.Add(this.btnGuardar);
-            this.panelInsert.Location = new System.Drawing.Point(287, 667);
+            this.panelInsert.Location = new System.Drawing.Point(395, 662);
             this.panelInsert.Name = "panelInsert";
-            this.panelInsert.Size = new System.Drawing.Size(1178, 207);
+            this.panelInsert.Size = new System.Drawing.Size(931, 207);
             this.panelInsert.TabIndex = 2;
             // 
             // lbIngresoDatos
             // 
             this.lbIngresoDatos.AutoSize = true;
             this.lbIngresoDatos.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIngresoDatos.Location = new System.Drawing.Point(3, 37);
+            this.lbIngresoDatos.Location = new System.Drawing.Point(3, 14);
             this.lbIngresoDatos.Name = "lbIngresoDatos";
             this.lbIngresoDatos.Size = new System.Drawing.Size(247, 38);
             this.lbIngresoDatos.TabIndex = 7;
@@ -417,17 +421,17 @@
             // lblDia
             // 
             this.lblDia.AutoSize = true;
-            this.lblDia.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDia.Location = new System.Drawing.Point(29, 88);
             this.lblDia.Name = "lblDia";
-            this.lblDia.Size = new System.Drawing.Size(40, 21);
+            this.lblDia.Size = new System.Drawing.Size(49, 28);
             this.lblDia.TabIndex = 8;
             this.lblDia.Text = "Día:";
             // 
             // cmbDiaSemana
             // 
             this.cmbDiaSemana.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDiaSemana.Location = new System.Drawing.Point(80, 84);
+            this.cmbDiaSemana.Location = new System.Drawing.Point(93, 88);
             this.cmbDiaSemana.Name = "cmbDiaSemana";
             this.cmbDiaSemana.Size = new System.Drawing.Size(184, 28);
             this.cmbDiaSemana.TabIndex = 9;
@@ -435,17 +439,17 @@
             // lblMedico
             // 
             this.lblMedico.AutoSize = true;
-            this.lblMedico.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.lblMedico.Location = new System.Drawing.Point(287, 88);
+            this.lblMedico.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblMedico.Location = new System.Drawing.Point(313, 88);
             this.lblMedico.Name = "lblMedico";
-            this.lblMedico.Size = new System.Drawing.Size(71, 21);
+            this.lblMedico.Size = new System.Drawing.Size(87, 28);
             this.lblMedico.TabIndex = 10;
             this.lblMedico.Text = "Médico:";
             // 
             // cboMedico
             // 
             this.cboMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMedico.Location = new System.Drawing.Point(368, 84);
+            this.cboMedico.Location = new System.Drawing.Point(420, 88);
             this.cboMedico.Name = "cboMedico";
             this.cboMedico.Size = new System.Drawing.Size(284, 28);
             this.cboMedico.TabIndex = 11;
@@ -453,17 +457,17 @@
             // lblHoraIni
             // 
             this.lblHoraIni.AutoSize = true;
-            this.lblHoraIni.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.lblHoraIni.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoraIni.Location = new System.Drawing.Point(29, 149);
             this.lblHoraIni.Name = "lblHoraIni";
-            this.lblHoraIni.Size = new System.Drawing.Size(98, 21);
+            this.lblHoraIni.Size = new System.Drawing.Size(121, 28);
             this.lblHoraIni.TabIndex = 12;
             this.lblHoraIni.Text = "Hora inicio:";
             // 
             // dtpHoraInicio
             // 
             this.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraInicio.Location = new System.Drawing.Point(140, 145);
+            this.dtpHoraInicio.Location = new System.Drawing.Point(168, 151);
             this.dtpHoraInicio.Name = "dtpHoraInicio";
             this.dtpHoraInicio.ShowUpDown = true;
             this.dtpHoraInicio.Size = new System.Drawing.Size(124, 26);
@@ -472,17 +476,17 @@
             // lblHoraFin
             // 
             this.lblHoraFin.AutoSize = true;
-            this.lblHoraFin.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.lblHoraFin.Location = new System.Drawing.Point(288, 149);
+            this.lblHoraFin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblHoraFin.Location = new System.Drawing.Point(313, 149);
             this.lblHoraFin.Name = "lblHoraFin";
-            this.lblHoraFin.Size = new System.Drawing.Size(76, 21);
+            this.lblHoraFin.Size = new System.Drawing.Size(95, 28);
             this.lblHoraFin.TabIndex = 14;
             this.lblHoraFin.Text = "Hora fin:";
             // 
             // dtpHoraFin
             // 
             this.dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraFin.Location = new System.Drawing.Point(377, 144);
+            this.dtpHoraFin.Location = new System.Drawing.Point(420, 151);
             this.dtpHoraFin.Name = "dtpHoraFin";
             this.dtpHoraFin.ShowUpDown = true;
             this.dtpHoraFin.Size = new System.Drawing.Size(124, 26);
@@ -492,10 +496,11 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(88)))), ((int)(((byte)(118)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(549, 139);
+            this.btnGuardar.Location = new System.Drawing.Point(600, 148);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(104, 42);
+            this.btnGuardar.Size = new System.Drawing.Size(104, 37);
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -505,13 +510,14 @@
             this.panelCard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCard.BackColor = System.Drawing.Color.White;
+            this.panelCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelCard.Controls.Add(this.pictureBox1);
             this.panelCard.Controls.Add(this.cmbEstado);
             this.panelCard.Controls.Add(this.dgvHorarios);
-            this.panelCard.Location = new System.Drawing.Point(280, 96);
+            this.panelCard.Location = new System.Drawing.Point(294, 96);
             this.panelCard.Name = "panelCard";
             this.panelCard.Padding = new System.Windows.Forms.Padding(16);
-            this.panelCard.Size = new System.Drawing.Size(2065, 330);
+            this.panelCard.Size = new System.Drawing.Size(1142, 321);
             this.panelCard.TabIndex = 0;
             // 
             // pictureBox1
@@ -519,7 +525,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Embudo;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 22);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -529,7 +535,7 @@
             // cmbEstado
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstado.Location = new System.Drawing.Point(43, 8);
+            this.cmbEstado.Location = new System.Drawing.Point(54, 19);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(179, 28);
             this.cmbEstado.TabIndex = 0;
@@ -540,14 +546,16 @@
             this.dgvHorarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHorarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvHorarios.ColumnHeadersHeight = 34;
-            this.dgvHorarios.Location = new System.Drawing.Point(7, 60);
+            this.dgvHorarios.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvHorarios.Location = new System.Drawing.Point(19, 76);
             this.dgvHorarios.Name = "dgvHorarios";
             this.dgvHorarios.ReadOnly = true;
             this.dgvHorarios.RowHeadersVisible = false;
             this.dgvHorarios.RowHeadersWidth = 62;
             this.dgvHorarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHorarios.Size = new System.Drawing.Size(1173, 251);
+            this.dgvHorarios.Size = new System.Drawing.Size(1089, 224);
             this.dgvHorarios.TabIndex = 1;
             // 
             // FormHorarios

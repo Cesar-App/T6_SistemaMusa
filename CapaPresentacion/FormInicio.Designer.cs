@@ -43,33 +43,44 @@
             this.separator = new System.Windows.Forms.Panel();
             this.btnRoles = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnMedicos = new System.Windows.Forms.Button();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pbHome = new System.Windows.Forms.PictureBox();
+            this.lbHora = new System.Windows.Forms.Label();
+            this.lbFecha = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbFecha = new System.Windows.Forms.PictureBox();
+            this.pbHora = new System.Windows.Forms.PictureBox();
+            this.pbHome = new System.Windows.Forms.PictureBox();
             this.panelCard = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbBienvenida = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSidebar.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelHeader.SuspendLayout();
+            this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFecha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
-            this.panelContent.SuspendLayout();
+            this.panelCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSidebar
@@ -155,18 +166,6 @@
             this.panel1.Size = new System.Drawing.Size(260, 110);
             this.panel1.TabIndex = 9;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.Salir;
-            this.pictureBox4.Location = new System.Drawing.Point(196, 12);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(53, 46);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -187,18 +186,6 @@
             this.label3.Size = new System.Drawing.Size(161, 28);
             this.label3.TabIndex = 8;
             this.label3.Text = "NombreUsuario";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources._5540603_removebg_preview;
-            this.pictureBox3.Location = new System.Drawing.Point(11, 6);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(49, 56);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
             // 
             // btnUsuarios
             // 
@@ -255,30 +242,134 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.White;
             this.panelHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelHeader.Controls.Add(this.pictureBox5);
+            this.panelHeader.Controls.Add(this.pbFecha);
+            this.panelHeader.Controls.Add(this.pbHora);
+            this.panelHeader.Controls.Add(this.lbHora);
+            this.panelHeader.Controls.Add(this.lbFecha);
             this.panelHeader.Controls.Add(this.pbHome);
             this.panelHeader.Controls.Add(this.label2);
-            this.panelHeader.Controls.Add(this.textBox1);
             this.panelHeader.Controls.Add(this.lblTitulo);
             this.panelHeader.Controls.Add(this.txtBuscar);
             this.panelHeader.Controls.Add(this.btnNuevo);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1286, 72);
+            this.panelHeader.Size = new System.Drawing.Size(1542, 72);
             this.panelHeader.TabIndex = 1;
             // 
-            // pictureBox5
+            // lbHora
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = global::CapaPresentacion.Properties.Resources.Buscador;
-            this.pictureBox5.Location = new System.Drawing.Point(1227, 20);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(46, 33);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
+            this.lbHora.AutoSize = true;
+            this.lbHora.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.lbHora.Location = new System.Drawing.Point(1175, 22);
+            this.lbHora.Name = "lbHora";
+            this.lbHora.Size = new System.Drawing.Size(77, 38);
+            this.lbHora.TabIndex = 7;
+            this.lbHora.Text = "Hora";
+            // 
+            // lbFecha
+            // 
+            this.lbFecha.AutoSize = true;
+            this.lbFecha.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFecha.Location = new System.Drawing.Point(898, 22);
+            this.lbFecha.Name = "lbFecha";
+            this.lbFecha.Size = new System.Drawing.Size(89, 38);
+            this.lbFecha.TabIndex = 6;
+            this.lbFecha.Text = "Fecha";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 5;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(312, 22);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(609, 45);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Inicio Sistema Gestion de Citas Medicas";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBuscar.Location = new System.Drawing.Point(1980, 20);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(320, 31);
+            this.txtBuscar.TabIndex = 1;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(88)))), ((int)(((byte)(118)))));
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(2320, 18);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(110, 32);
+            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.Text = "Nuevo Registro";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // panelContent
+            // 
+            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.panelContent.Controls.Add(this.panelCard);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(0, 0);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1542, 908);
+            this.panelContent.TabIndex = 2;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.Salir;
+            this.pictureBox4.Location = new System.Drawing.Point(196, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(53, 46);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources._5540603_removebg_preview;
+            this.pictureBox3.Location = new System.Drawing.Point(11, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(49, 56);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pbFecha
+            // 
+            this.pbFecha.Image = global::CapaPresentacion.Properties.Resources.Fecha;
+            this.pbFecha.Location = new System.Drawing.Point(859, 20);
+            this.pbFecha.Name = "pbFecha";
+            this.pbFecha.Size = new System.Drawing.Size(44, 36);
+            this.pbFecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFecha.TabIndex = 9;
+            this.pbFecha.TabStop = false;
+            // 
+            // pbHora
+            // 
+            this.pbHora.Image = global::CapaPresentacion.Properties.Resources.Hora;
+            this.pbHora.Location = new System.Drawing.Point(1135, 20);
+            this.pbHora.Name = "pbHora";
+            this.pbHora.Size = new System.Drawing.Size(44, 36);
+            this.pbHora.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHora.TabIndex = 8;
+            this.pbHora.TabStop = false;
             // 
             // pbHome
             // 
@@ -293,76 +384,82 @@
             this.pbHome.TabStop = false;
             this.pbHome.Click += new System.EventHandler(this.pbHome_Click);
             // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(1018, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 26);
-            this.textBox1.TabIndex = 3;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(312, 22);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(102, 45);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Inicio";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBuscar.Location = new System.Drawing.Point(1724, 20);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(320, 31);
-            this.txtBuscar.TabIndex = 1;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(88)))), ((int)(((byte)(118)))));
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(2064, 18);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(110, 32);
-            this.btnNuevo.TabIndex = 2;
-            this.btnNuevo.Text = "Nuevo Registro";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            // 
-            // panelContent
-            // 
-            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
-            this.panelContent.Controls.Add(this.panelCard);
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 0);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1286, 908);
-            this.panelContent.TabIndex = 2;
-            // 
             // panelCard
             // 
             this.panelCard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCard.BackColor = System.Drawing.Color.White;
-            this.panelCard.Location = new System.Drawing.Point(280, 96);
+            this.panelCard.BackgroundImage = global::CapaPresentacion.Properties.Resources.Fondo1;
+            this.panelCard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCard.Controls.Add(this.label6);
+            this.panelCard.Controls.Add(this.pictureBox2);
+            this.panelCard.Controls.Add(this.label1);
+            this.panelCard.Controls.Add(this.pictureBox1);
+            this.panelCard.Controls.Add(this.lbBienvenida);
+            this.panelCard.Location = new System.Drawing.Point(297, 96);
             this.panelCard.Name = "panelCard";
             this.panelCard.Padding = new System.Windows.Forms.Padding(16);
-            this.panelCard.Size = new System.Drawing.Size(1886, 800);
+            this.panelCard.Size = new System.Drawing.Size(1208, 555);
             this.panelCard.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Backup;
+            this.pictureBox1.Location = new System.Drawing.Point(100, 163);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(337, 301);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbBienvenida
+            // 
+            this.lbBienvenida.AutoSize = true;
+            this.lbBienvenida.BackColor = System.Drawing.Color.Transparent;
+            this.lbBienvenida.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lbBienvenida.Location = new System.Drawing.Point(317, 36);
+            this.lbBienvenida.Name = "lbBienvenida";
+            this.lbBienvenida.Size = new System.Drawing.Size(219, 48);
+            this.lbBienvenida.TabIndex = 6;
+            this.lbBienvenida.Text = "Bienvenido ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(127, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(289, 48);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Guardar Backup";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(774, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(313, 48);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Restaurar Backup";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.Backup;
+            this.pictureBox2.Location = new System.Drawing.Point(760, 163);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(337, 301);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
             // 
             // FormInicio
             // 
-            this.ClientSize = new System.Drawing.Size(1286, 908);
+            this.ClientSize = new System.Drawing.Size(1542, 908);
             this.Controls.Add(this.panelSidebar);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelContent);
@@ -376,19 +473,23 @@
             this.panelSidebar.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             this.panelContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFecha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
+            this.panelCard.ResumeLayout(false);
+            this.panelCard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPacientes;
         private System.Windows.Forms.Button btnHistorial;
@@ -402,10 +503,18 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRoles;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel separator;
         private System.Windows.Forms.Button btnHorarios;
         private System.Windows.Forms.Button btnEspecialidades;
+        private System.Windows.Forms.Label lbBienvenida;
+        private System.Windows.Forms.Label lbHora;
+        private System.Windows.Forms.Label lbFecha;
+        private System.Windows.Forms.PictureBox pbFecha;
+        private System.Windows.Forms.PictureBox pbHora;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

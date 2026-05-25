@@ -46,6 +46,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnHorarios = new System.Windows.Forms.Button();
             this.btnEspecialidades = new System.Windows.Forms.Button();
@@ -53,18 +54,14 @@
             this.separator = new System.Windows.Forms.Panel();
             this.btnRoles = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnMedicos = new System.Windows.Forms.Button();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pbHome = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -72,6 +69,11 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelInsert = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblDia = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboPaciente = new System.Windows.Forms.ComboBox();
@@ -82,21 +84,28 @@
             this.cmbEstadoInsert = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panelCard = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pbHome = new System.Windows.Forms.PictureBox();
+            this.pbReiniciar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSidebar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             this.panelContent.SuspendLayout();
             this.panelInsert.SuspendLayout();
             this.panelCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReiniciar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSidebar
@@ -182,18 +191,6 @@
             this.panel1.Size = new System.Drawing.Size(260, 110);
             this.panel1.TabIndex = 9;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.Salir;
-            this.pictureBox4.Location = new System.Drawing.Point(196, 12);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(53, 46);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -214,18 +211,6 @@
             this.label3.Size = new System.Drawing.Size(161, 28);
             this.label3.TabIndex = 8;
             this.label3.Text = "NombreUsuario";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources._5540603_removebg_preview;
-            this.pictureBox3.Location = new System.Drawing.Point(11, 6);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(49, 56);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
             // 
             // btnUsuarios
             // 
@@ -276,6 +261,7 @@
             this.btnCitas.TabIndex = 4;
             this.btnCitas.Text = "Citas Medicas";
             this.btnCitas.UseVisualStyleBackColor = true;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
             // panelHeader
             // 
@@ -293,31 +279,6 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1286, 72);
             this.panelHeader.TabIndex = 1;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = global::CapaPresentacion.Properties.Resources.Buscador;
-            this.pictureBox5.Location = new System.Drawing.Point(1227, 20);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(46, 33);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pbHome
-            // 
-            this.pbHome.BackColor = System.Drawing.Color.Transparent;
-            this.pbHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbHome.Image = global::CapaPresentacion.Properties.Resources.Musa1;
-            this.pbHome.Location = new System.Drawing.Point(5, 3);
-            this.pbHome.Name = "pbHome";
-            this.pbHome.Size = new System.Drawing.Size(256, 62);
-            this.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHome.TabIndex = 4;
-            this.pbHome.TabStop = false;
-            this.pbHome.Click += new System.EventHandler(this.pbHome_Click);
             // 
             // label2
             // 
@@ -384,6 +345,14 @@
             // 
             this.panelInsert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelInsert.BackColor = System.Drawing.Color.White;
+            this.panelInsert.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelInsert.Controls.Add(this.button1);
+            this.panelInsert.Controls.Add(this.label10);
+            this.panelInsert.Controls.Add(this.label9);
+            this.panelInsert.Controls.Add(this.label8);
+            this.panelInsert.Controls.Add(this.label7);
+            this.panelInsert.Controls.Add(this.label6);
             this.panelInsert.Controls.Add(this.lblDia);
             this.panelInsert.Controls.Add(this.label1);
             this.panelInsert.Controls.Add(this.cboPaciente);
@@ -393,26 +362,76 @@
             this.panelInsert.Controls.Add(this.txtMotivoInsert);
             this.panelInsert.Controls.Add(this.cmbEstadoInsert);
             this.panelInsert.Controls.Add(this.btnGuardar);
-            this.panelInsert.Location = new System.Drawing.Point(287, 659);
+            this.panelInsert.Location = new System.Drawing.Point(342, 625);
             this.panelInsert.Name = "panelInsert";
-            this.panelInsert.Size = new System.Drawing.Size(871, 169);
+            this.panelInsert.Size = new System.Drawing.Size(871, 261);
             this.panelInsert.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(525, 140);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(123, 28);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Estado Cita:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(306, 139);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(106, 28);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Hora Cita:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(47, 139);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 28);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Fecha Cita:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(47, 197);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 28);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Motivo Cita:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(413, 79);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 28);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Medico:";
             // 
             // lblDia
             // 
             this.lblDia.AutoSize = true;
-            this.lblDia.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDia.Location = new System.Drawing.Point(300, 42);
+            this.lblDia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDia.Location = new System.Drawing.Point(47, 79);
             this.lblDia.Name = "lblDia";
-            this.lblDia.Size = new System.Drawing.Size(40, 21);
+            this.lblDia.Size = new System.Drawing.Size(98, 28);
             this.lblDia.TabIndex = 9;
-            this.lblDia.Text = "Día:";
+            this.lblDia.Text = "Paciente:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 25);
+            this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(247, 38);
             this.label1.TabIndex = 7;
@@ -422,7 +441,7 @@
             // cboPaciente
             // 
             this.cboPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPaciente.Location = new System.Drawing.Point(14, 85);
+            this.cboPaciente.Location = new System.Drawing.Point(162, 79);
             this.cboPaciente.Name = "cboPaciente";
             this.cboPaciente.Size = new System.Drawing.Size(220, 28);
             this.cboPaciente.TabIndex = 0;
@@ -430,7 +449,7 @@
             // cboMedico
             // 
             this.cboMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMedico.Location = new System.Drawing.Point(246, 85);
+            this.cboMedico.Location = new System.Drawing.Point(522, 79);
             this.cboMedico.Name = "cboMedico";
             this.cboMedico.Size = new System.Drawing.Size(220, 28);
             this.cboMedico.TabIndex = 1;
@@ -438,7 +457,7 @@
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(478, 85);
+            this.dtpFecha.Location = new System.Drawing.Point(134, 141);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(110, 26);
             this.dtpFecha.TabIndex = 2;
@@ -446,7 +465,7 @@
             // dtpHora
             // 
             this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHora.Location = new System.Drawing.Point(594, 85);
+            this.dtpHora.Location = new System.Drawing.Point(390, 141);
             this.dtpHora.Name = "dtpHora";
             this.dtpHora.ShowUpDown = true;
             this.dtpHora.Size = new System.Drawing.Size(80, 26);
@@ -454,7 +473,7 @@
             // 
             // txtMotivoInsert
             // 
-            this.txtMotivoInsert.Location = new System.Drawing.Point(14, 121);
+            this.txtMotivoInsert.Location = new System.Drawing.Point(148, 201);
             this.txtMotivoInsert.Name = "txtMotivoInsert";
             this.txtMotivoInsert.Size = new System.Drawing.Size(540, 26);
             this.txtMotivoInsert.TabIndex = 4;
@@ -462,7 +481,7 @@
             // cmbEstadoInsert
             // 
             this.cmbEstadoInsert.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstadoInsert.Location = new System.Drawing.Point(566, 121);
+            this.cmbEstadoInsert.Location = new System.Drawing.Point(622, 139);
             this.cmbEstadoInsert.Name = "cmbEstadoInsert";
             this.cmbEstadoInsert.Size = new System.Drawing.Size(120, 28);
             this.cmbEstadoInsert.TabIndex = 5;
@@ -471,44 +490,36 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(88)))), ((int)(((byte)(118)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(698, 99);
+            this.btnGuardar.Location = new System.Drawing.Point(751, 194);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(80, 32);
+            this.btnGuardar.Size = new System.Drawing.Size(92, 41);
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // panelCard
             // 
             this.panelCard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCard.BackColor = System.Drawing.Color.White;
+            this.panelCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCard.Controls.Add(this.pbReiniciar);
             this.panelCard.Controls.Add(this.pictureBox1);
             this.panelCard.Controls.Add(this.cmbEstado);
             this.panelCard.Controls.Add(this.dgvCitas);
-            this.panelCard.Location = new System.Drawing.Point(280, 96);
+            this.panelCard.Location = new System.Drawing.Point(288, 108);
             this.panelCard.Name = "panelCard";
             this.panelCard.Padding = new System.Windows.Forms.Padding(16);
-            this.panelCard.Size = new System.Drawing.Size(1886, 330);
+            this.panelCard.Size = new System.Drawing.Size(962, 293);
             this.panelCard.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Embudo;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 22);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // cmbEstado
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstado.Location = new System.Drawing.Point(43, 8);
+            this.cmbEstado.Location = new System.Drawing.Point(54, 19);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(179, 28);
             this.cmbEstado.TabIndex = 0;
@@ -519,15 +530,114 @@
             this.dgvCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCitas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCitas.BackgroundColor = System.Drawing.Color.White;
             this.dgvCitas.ColumnHeadersHeight = 34;
-            this.dgvCitas.Location = new System.Drawing.Point(7, 60);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCitas.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCitas.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvCitas.Location = new System.Drawing.Point(68, 60);
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.ReadOnly = true;
             this.dgvCitas.RowHeadersVisible = false;
             this.dgvCitas.RowHeadersWidth = 62;
             this.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCitas.Size = new System.Drawing.Size(994, 251);
+            this.dgvCitas.Size = new System.Drawing.Size(822, 212);
             this.dgvCitas.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(88)))), ((int)(((byte)(118)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(751, 140);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 41);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Ver Reporte";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.Salir;
+            this.pictureBox4.Location = new System.Drawing.Point(196, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(53, 46);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources._5540603_removebg_preview;
+            this.pictureBox3.Location = new System.Drawing.Point(11, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(49, 56);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::CapaPresentacion.Properties.Resources.Buscador;
+            this.pictureBox5.Location = new System.Drawing.Point(1227, 20);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(46, 33);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pbHome
+            // 
+            this.pbHome.BackColor = System.Drawing.Color.Transparent;
+            this.pbHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbHome.Image = global::CapaPresentacion.Properties.Resources.Musa1;
+            this.pbHome.Location = new System.Drawing.Point(5, 3);
+            this.pbHome.Name = "pbHome";
+            this.pbHome.Size = new System.Drawing.Size(256, 62);
+            this.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHome.TabIndex = 4;
+            this.pbHome.TabStop = false;
+            this.pbHome.Click += new System.EventHandler(this.pbHome_Click);
+            // 
+            // pbReiniciar
+            // 
+            this.pbReiniciar.BackColor = System.Drawing.Color.Transparent;
+            this.pbReiniciar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbReiniciar.Image = global::CapaPresentacion.Properties.Resources.Reiniciar;
+            this.pbReiniciar.Location = new System.Drawing.Point(281, 19);
+            this.pbReiniciar.Name = "pbReiniciar";
+            this.pbReiniciar.Size = new System.Drawing.Size(32, 28);
+            this.pbReiniciar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbReiniciar.TabIndex = 4;
+            this.pbReiniciar.TabStop = false;
+            this.pbReiniciar.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Embudo;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 22);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // FormCitas
             // 
@@ -546,18 +656,19 @@
             this.panelSidebar.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             this.panelContent.ResumeLayout(false);
             this.panelInsert.ResumeLayout(false);
             this.panelInsert.PerformLayout();
             this.panelCard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReiniciar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -586,5 +697,12 @@
         private System.Windows.Forms.Button btnHorarios;
         private System.Windows.Forms.Button btnEspecialidades;
         private System.Windows.Forms.Label lblDia;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pbReiniciar;
     }
 }

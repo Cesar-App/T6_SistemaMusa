@@ -1,0 +1,45 @@
+﻿using CapaEntidades;
+using CapaNegocio;
+using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class FormInicio : Form
+    {
+        public FormInicio()
+        {
+            InitializeComponent();
+        }
+
+        private void FormCitas_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FormCitas_Load_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            FormHorarios formHorarios = new FormHorarios();
+            formHorarios.ShowDialog();
+        }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            FormCitas formCitas = new FormCitas();
+            formCitas.ShowDialog();
+        }
+
+        private void pbHome_Click(object sender, EventArgs e)
+        {
+            FormInicio formInicio = new FormInicio();
+            formInicio.ShowDialog();
+        }
+    }
+}

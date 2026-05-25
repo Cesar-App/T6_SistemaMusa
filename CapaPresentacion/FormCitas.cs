@@ -11,6 +11,7 @@ namespace CapaPresentacion
     {
         private DataTable citasTable;
         private CitasBL citasBL = new CitasBL();
+        private int? selectedCitaId = null;
         public FormCitas()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace CapaPresentacion
             this.btnNuevo.Click += btnNuevo_Click;
             this.dgvCitas.CellFormatting += dgvCitas_CellFormatting;
             this.dgvCitas.CellContentClick += dgvCitas_CellContentClick;
+            this.dgvCitas.SelectionChanged += dgvCitas_SelectionChanged;
             this.btnGuardar.Click += BtnGuardar_Click;
         }
 
@@ -121,6 +123,34 @@ namespace CapaPresentacion
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            // si está en modo eliminar
+            if (btnGuardar.Text == "Eliminar" && selectedCitaId.HasValue)
+            {
+                var confirm = MessageBox.Show($"¿Está seguro de eliminar la cita #{selectedCitaId.Value}? Esta acción no se puede deshacer.",
+                    "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (confirm == DialogResult.Yes)
+                {
+                    try
+                    {
+                        citasBL.Eliminar(selectedCitaId.Value);
+                        MessageBox.Show("Cita eliminada correctamente.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarDatos();
+                        dgvCitas.ClearSelection();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                // resetear estado del botón
+                selectedCitaId = null;
+                btnGuardar.Text = "Guardar";
+                btnGuardar.BackColor = Color.FromArgb(3, 88, 118);
+                btnGuardar.ForeColor = Color.White;
+                return;
+            }
+
             try
             {
                 // validar campos mínimos
@@ -147,11 +177,38 @@ namespace CapaPresentacion
 
                 MessageBox.Show("Cita guardada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                // recargar y limpiar selección
+                CargarDatos();
+                dgvCitas.ClearSelection();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void dgvCitas_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvCitas.SelectedRows.Count == 1)
+            {
+                var row = dgvCitas.SelectedRows[0];
+                var cita = row.DataBoundItem as CapaEntidades.Citas;
+                if (cita != null)
+                {
+                    selectedCitaId = cita.Id_Cita;
+                    btnGuardar.Text = "Eliminar";
+                    btnGuardar.BackColor = Color.FromArgb(220, 53, 69); // rojo
+                    btnGuardar.ForeColor = Color.White;
+                    return;
+                }
+            }
+
+            // si no hay selección válida, volver a modo guardar
+            selectedCitaId = null;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.BackColor = Color.FromArgb(3, 88, 118);
+            btnGuardar.ForeColor = Color.White;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -172,13 +229,43 @@ namespace CapaPresentacion
         private void btnHorarios_Click(object sender, EventArgs e)
         {
             FormHorarios formHorarios = new FormHorarios();
+            this.Hide();
             formHorarios.ShowDialog();
+            this.Show();
         }
 
         private void pbHome_Click(object sender, EventArgs e)
         {
             FormInicio formInicio = new FormInicio();
+            this.Hide();
             formInicio.ShowDialog();
+            this.Show();
+        }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            FormCitas formCitas = new FormCitas();
+            this.Hide();
+            formCitas.ShowDialog();
+            this.Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FrmLogin formLogin = new FrmLogin();
+            formLogin.Show();
+            this.Close();
+        }
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+            // llamar al handler principal (compatible con el evento generado por el diseñador)
+            BtnGuardar_Click(sender, e);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

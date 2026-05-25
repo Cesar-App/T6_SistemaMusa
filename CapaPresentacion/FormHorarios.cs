@@ -170,24 +170,43 @@ namespace CapaPresentacion
 
         private void FormCitas_Load_1(object sender, EventArgs e)
         {
-            
+             
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            
+            FormHorarios formHorarios = new FormHorarios();
+            this.Hide();
+            formHorarios.ShowDialog();
+            this.Show();
         }
 
         private void btnCitas_Click(object sender, EventArgs e)
         {
             FormCitas formCitas = new FormCitas();
+            this.Hide();
             formCitas.ShowDialog();
+            this.Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             FormInicio formInicio = new FormInicio();
+            this.Hide();
             formInicio.ShowDialog();
+            this.Show();
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FrmLogin formLogin = new FrmLogin();
+            formLogin.Show();
+            this.Close();
         }
     }
 }

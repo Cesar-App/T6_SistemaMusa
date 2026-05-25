@@ -1,0 +1,208 @@
+﻿using CapaEntidades;
+using CapaNegocio;
+using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class FormCitas : Form
+    {
+        private DataTable citasTable;
+        private CitasBL citasBL = new CitasBL();
+        public FormCitas()
+        {
+            InitializeComponent();
+            // asignar manejadores básicos
+            this.Load += FormCitas_Load;
+            this.txtBuscar.TextChanged += txtBuscar_TextChanged;
+            this.cmbEstado.SelectedIndexChanged += cmbEstado_SelectedIndexChanged;
+            this.btnNuevo.Click += btnNuevo_Click;
+            this.dgvCitas.CellFormatting += dgvCitas_CellFormatting;
+            this.dgvCitas.CellContentClick += dgvCitas_CellContentClick;
+            this.btnGuardar.Click += BtnGuardar_Click;
+        }
+
+        private void FormCitas_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+
+        private void CargarDatos()
+        {
+            dgvCitas.DataSource = citasBL.ObtenerTodos();
+        }
+
+        private DataGridViewTextBoxColumn CreateTextColumn(string header, string dataProperty, int width, string format = null)
+        {
+            var c = new DataGridViewTextBoxColumn
+            {
+                HeaderText = header,
+                DataPropertyName = dataProperty,
+                Width = width,
+                SortMode = DataGridViewColumnSortMode.NotSortable
+            };
+            if (!string.IsNullOrEmpty(format))
+                c.DefaultCellStyle.Format = format;
+            return c;
+        }
+
+        private void FiltrarGrilla()
+        {
+            var filtro = "1 = 1";
+            if (!string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                string q = txtBuscar.Text.Replace("'", "''");
+                filtro += $" AND ([ID Cita] LIKE '%{q}%' OR [Paciente] LIKE '%{q}%' OR [Médico] LIKE '%{q}%' OR Motivo LIKE '%{q}%')";
+            }
+
+            if (cmbEstado.SelectedIndex > 0 && cmbEstado.SelectedItem != null)
+            {
+                string estado = cmbEstado.SelectedItem.ToString().Replace("'", "''");
+                filtro += $" AND Estado = '{estado}'";
+            }
+
+            (dgvCitas.DataSource as DataTable).DefaultView.RowFilter = filtro.Replace("1 = 1 AND ", "");
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarGrilla();
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarGrilla();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Abrir formulario para crear nuevo registro.", "Nuevo Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dgvCitas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvCitas.Columns[e.ColumnIndex].HeaderText == "Estado" && e.Value != null)
+            {
+                string estado = e.Value.ToString();
+                var cell = dgvCitas.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                switch (estado)
+                {
+                    case "Pendiente":
+                        cell.Style.BackColor = Color.FromArgb(255, 249, 215);
+                        cell.Style.ForeColor = Color.FromArgb(102, 85, 0);
+                        break;
+                    case "Confirmada":
+                        cell.Style.BackColor = Color.FromArgb(221, 255, 235);
+                        cell.Style.ForeColor = Color.FromArgb(0, 102, 51);
+                        break;
+                    case "Atendido":
+                        cell.Style.BackColor = Color.FromArgb(235, 243, 255);
+                        cell.Style.ForeColor = Color.FromArgb(10, 67, 165);
+                        break;
+                    default:
+                        cell.Style.BackColor = Color.White;
+                        cell.Style.ForeColor = Color.Black;
+                        break;
+                }
+            }
+        }
+
+        private void dgvCitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            if (dgvCitas.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+                var id = dgvCitas.Rows[e.RowIndex].Cells["ID Cita"].Value?.ToString();
+                MessageBox.Show($"Acciones para la cita {id}", "Acciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // validar campos mínimos
+                if (cboPaciente.SelectedItem == null) throw new Exception("Seleccione un paciente.");
+                if (cboMedico.SelectedItem == null) throw new Exception("Seleccione un médico.");
+                if (string.IsNullOrWhiteSpace(txtMotivoInsert.Text)) throw new Exception("Ingrese el motivo.");
+
+                // crear entidad
+                var cita = new CapaEntidades.Citas
+                {
+                    Fecha_Cita = dtpFecha.Value.Date,
+                    Hora_Cita = dtpHora.Value.TimeOfDay,
+                    Motivo = txtMotivoInsert.Text.Trim(),
+                    Estado_Cita = cmbEstadoInsert.SelectedItem?.ToString() ?? "Pendiente",
+                    Observacion = string.Empty,
+                    Id_Paciente = Convert.ToInt32(((dynamic)cboPaciente.SelectedItem).Id_Paciente),
+                    Id_Medico = Convert.ToInt32(((dynamic)cboMedico.SelectedItem).Id_Medico),
+                    Estado = true
+                };
+
+                // insertar usando la capa de negocio
+                var bl = new CapaNegocio.CitasBL();
+                bl.Insertar(cita);
+
+                MessageBox.Show("Cita guardada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCitas_Load_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            FormHorarios formHorarios = new FormHorarios();
+            this.Hide();
+            formHorarios.ShowDialog();
+            this.Show();
+        }
+
+        private void pbHome_Click(object sender, EventArgs e)
+        {
+            FormInicio formInicio = new FormInicio();
+            this.Hide();
+            formInicio.ShowDialog();
+            this.Show();
+        }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            FormCitas formCitas = new FormCitas();
+            this.Hide();
+            formCitas.ShowDialog();
+            this.Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FrmLogin formLogin = new FrmLogin();
+            formLogin.Show();
+            this.Close();
+        }
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

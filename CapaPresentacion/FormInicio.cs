@@ -3,43 +3,97 @@ using CapaNegocio;
 using System;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
     public partial class FormInicio : Form
     {
+        private CapaEntidades.Usuarios currentUser;
+        private System.Windows.Forms.Timer clockTimer;
+
         public FormInicio()
         {
             InitializeComponent();
+            this.Load += FormInicio_Load;
+            lbFecha.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+        }
+
+        public FormInicio(CapaEntidades.Usuarios usuario) : this()
+        {
+            currentUser = usuario;
+            if (!string.IsNullOrWhiteSpace(usuario?.Nombre))
+                this.lbBienvenida.Text = $"Bienvenido, {usuario.Nombre}";
+
+            // mostrar nombre y rol en el sidebar (label3 y label4 en el designer)
+            var lblNombre = this.Controls.Find("label3", true).FirstOrDefault() as Label;
+            var lblRol = this.Controls.Find("label4", true).FirstOrDefault() as Label;
+            if (lblNombre != null) lblNombre.Text = usuario.Nombre;
+            if (lblRol != null) lblRol.Text = usuario.Id_Rol.ToString();
         }
 
         private void FormCitas_Load(object sender, EventArgs e)
         {
-            
+        }
+
+        private void FormInicio_Load(object sender, EventArgs e)
+        {
+            // si no se pasó el usuario por el constructor, intentar obtenerlo de la sesión
+            if (currentUser == null && Session.CurrentUser != null)
+            {
+                currentUser = Session.CurrentUser;
+                if (!string.IsNullOrWhiteSpace(currentUser?.Nombre))
+                    this.lbBienvenida.Text = $"Bienvenido, {currentUser.Nombre}";
+                var lblNombre = this.Controls.Find("label3", true).FirstOrDefault() as Label;
+                var lblRol = this.Controls.Find("label4", true).FirstOrDefault() as Label;
+                if (lblNombre != null) lblNombre.Text = currentUser.Nombre;
+                if (lblRol != null) lblRol.Text = currentUser.Id_Rol.ToString();
+            }
+
+            // iniciar timer para hora en tiempo real (guardado en campo para evitar GC)
+            clockTimer = new System.Windows.Forms.Timer();
+            clockTimer.Interval = 1000;
+            clockTimer.Tick += Timer_Tick;
+            clockTimer.Start();
         }
 
         private void FormCitas_Load_1(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            lbHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
         private void btnHorarios_Click(object sender, EventArgs e)
         {
             FormHorarios formHorarios = new FormHorarios();
+            this.Hide();
             formHorarios.ShowDialog();
+            this.Show();
         }
 
         private void btnCitas_Click(object sender, EventArgs e)
         {
             FormCitas formCitas = new FormCitas();
+            this.Hide();
             formCitas.ShowDialog();
+            this.Show();
         }
 
         private void pbHome_Click(object sender, EventArgs e)
         {
-            FormInicio formInicio = new FormInicio();
-            formInicio.ShowDialog();
+            this.lbBienvenida.Text = currentUser != null ? $"Bienvenido, {currentUser.Nombre}" : this.lbBienvenida.Text;
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FrmLogin formLogin = new FrmLogin();
+            formLogin.Show();
+            this.Close();
         }
     }
 }

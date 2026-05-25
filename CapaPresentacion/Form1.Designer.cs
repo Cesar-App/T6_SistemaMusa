@@ -31,21 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cardPanel = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.separator = new System.Windows.Forms.Panel();
             this.panelUser = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.panelPass = new System.Windows.Forms.Panel();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.picShow = new System.Windows.Forms.PictureBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblFooter = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picShow = new System.Windows.Forms.PictureBox();
             this.cardPanel.SuspendLayout();
-            this.panelUser.SuspendLayout();
-            this.panelPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +73,18 @@
             this.cardPanel.Size = new System.Drawing.Size(578, 506);
             this.cardPanel.TabIndex = 1;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.Musa;
+            this.pictureBox2.Location = new System.Drawing.Point(62, 40);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(459, 110);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
             // separator
             // 
             this.separator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -92,6 +104,18 @@
             this.panelUser.Padding = new System.Windows.Forms.Padding(10);
             this.panelUser.Size = new System.Drawing.Size(420, 44);
             this.panelUser.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Usuario;
+            this.pictureBox1.Location = new System.Drawing.Point(364, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // txtUser
             // 
@@ -133,6 +157,19 @@
             this.txtPassword.GotFocus += new System.EventHandler(this.txtPassword_GotFocus);
             this.txtPassword.LostFocus += new System.EventHandler(this.txtPassword_LostFocus);
             // 
+            // picShow
+            // 
+            this.picShow.BackColor = System.Drawing.Color.Transparent;
+            this.picShow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picShow.Image = ((System.Drawing.Image)(resources.GetObject("picShow.Image")));
+            this.picShow.Location = new System.Drawing.Point(364, 8);
+            this.picShow.Name = "picShow";
+            this.picShow.Size = new System.Drawing.Size(41, 26);
+            this.picShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picShow.TabIndex = 1;
+            this.picShow.TabStop = false;
+            this.picShow.Click += new System.EventHandler(this.picShow_Click);
+            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(89)))), ((int)(((byte)(117)))));
@@ -158,43 +195,6 @@
             this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblFooter.Click += new System.EventHandler(this.lblFooter_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.Musa;
-            this.pictureBox2.Location = new System.Drawing.Point(62, 40);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(459, 110);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Usuario;
-            this.pictureBox1.Location = new System.Drawing.Point(364, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // picShow
-            // 
-            this.picShow.BackColor = System.Drawing.Color.Transparent;
-            this.picShow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picShow.Image = ((System.Drawing.Image)(resources.GetObject("picShow.Image")));
-            this.picShow.Location = new System.Drawing.Point(364, 8);
-            this.picShow.Name = "picShow";
-            this.picShow.Size = new System.Drawing.Size(41, 26);
-            this.picShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picShow.TabIndex = 1;
-            this.picShow.TabStop = false;
-            this.picShow.Click += new System.EventHandler(this.picShow_Click);
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -210,12 +210,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.cardPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelUser.ResumeLayout(false);
             this.panelUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelPass.ResumeLayout(false);
             this.panelPass.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShow)).EndInit();
             this.ResumeLayout(false);
 
