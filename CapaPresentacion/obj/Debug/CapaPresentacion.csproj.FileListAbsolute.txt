@@ -1,4 +1,10 @@
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FrmLogin.resources
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FormEspecialidades.resources
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FormMedicos.resources
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FormInicio.resources
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FormHorarios.resources
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FormCitas.resources
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
@@ -14,7 +20,4 @@ C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\bin\Debug\CapaDa
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPres.61CA7C38.Up2Date
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
-C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FrmLogin.resources
-C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FormCitas.resources
-C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FormHorarios.resources
-C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FormInicio.resources
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaPresentacion\obj\Debug\CapaPresentacion.FormHistorialCitas.resources

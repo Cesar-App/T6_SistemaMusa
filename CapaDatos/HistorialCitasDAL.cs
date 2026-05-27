@@ -29,7 +29,8 @@ namespace CapaDatos
                         Fecha = Convert.ToDateTime(dr["fecha"]),
                         Usuario = dr["usuario"].ToString(),
                         Id_Cita = Convert.ToInt32(dr["id_cita"]),
-                        Estado = Convert.ToBoolean(dr["estado"])
+                        Estado = Convert.ToBoolean(dr["estado"]),
+                        Nombre_Paciente_Cita = dr["nombre_paciente_cita"].ToString() // ✅ Nuevo
                     });
                 }
             }

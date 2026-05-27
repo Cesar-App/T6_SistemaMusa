@@ -30,7 +30,10 @@ namespace CapaDatos
                         Telefono = dr["telefono"].ToString(),
                         Correo = dr["correo"].ToString(),
                         Id_Especialidad = Convert.ToInt32(dr["id_especialidad"]),
-                        Estado = Convert.ToBoolean(dr["estado"])
+                        Estado = Convert.ToBoolean(dr["estado"]),
+
+                        // Para Mostrar los nombres en lugar de los IDs
+                        Nombre_Especialidad = dr["Nombre_Especialidad"].ToString()
                     });
                 }
             }

@@ -14,5 +14,8 @@ namespace CapaEntidades
         public string Nombre { get; set; }
         public int Id_Rol { get; set; }
         public bool Estado { get; set; }
+
+        // Propiedad para mostrar el nombre del rol en lugar del ID
+        public string Nombre_Rol { get; set; }
     }
 }

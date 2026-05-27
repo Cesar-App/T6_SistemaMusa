@@ -14,7 +14,7 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.DataGridView dgvCitas;
         private System.Windows.Forms.Panel panelInsert;
         private System.Windows.Forms.ComboBox cboPaciente;
@@ -54,21 +54,28 @@
             this.separator = new System.Windows.Forms.Panel();
             this.btnRoles = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnMedicos = new System.Windows.Forms.Button();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pbHome = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelInsert = new System.Windows.Forms.Panel();
+            this.txtCita = new System.Windows.Forms.TextBox();
+            this.lbCita = new System.Windows.Forms.Label();
+            this.lbObservaciones = new System.Windows.Forms.Label();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -84,28 +91,22 @@
             this.cmbEstadoInsert = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panelCard = new System.Windows.Forms.Panel();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pbHome = new System.Windows.Forms.PictureBox();
             this.pbReiniciar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbFiltro = new System.Windows.Forms.ComboBox();
+            this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.panelSidebar.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             this.panelContent.SuspendLayout();
             this.panelInsert.SuspendLayout();
             this.panelCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbReiniciar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSidebar
@@ -149,6 +150,7 @@
             this.btnEspecialidades.TabIndex = 12;
             this.btnEspecialidades.Text = "Especialidades";
             this.btnEspecialidades.UseVisualStyleBackColor = true;
+            this.btnEspecialidades.Click += new System.EventHandler(this.btnEspecialidades_Click);
             // 
             // label5
             // 
@@ -191,6 +193,19 @@
             this.panel1.Size = new System.Drawing.Size(260, 110);
             this.panel1.TabIndex = 9;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.Salir;
+            this.pictureBox4.Location = new System.Drawing.Point(196, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(53, 46);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -212,6 +227,18 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "NombreUsuario";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources._5540603_removebg_preview;
+            this.pictureBox3.Location = new System.Drawing.Point(11, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(49, 56);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            // 
             // btnUsuarios
             // 
             this.btnUsuarios.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -231,6 +258,7 @@
             this.btnMedicos.TabIndex = 7;
             this.btnMedicos.Text = "Medicos";
             this.btnMedicos.UseVisualStyleBackColor = true;
+            this.btnMedicos.Click += new System.EventHandler(this.btnMedicos_Click);
             // 
             // btnPacientes
             // 
@@ -251,6 +279,7 @@
             this.btnHistorial.TabIndex = 5;
             this.btnHistorial.Text = "Historial de Citas";
             this.btnHistorial.UseVisualStyleBackColor = true;
+            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // btnCitas
             // 
@@ -267,10 +296,7 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.White;
             this.panelHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelHeader.Controls.Add(this.pictureBox5);
             this.panelHeader.Controls.Add(this.pbHome);
-            this.panelHeader.Controls.Add(this.label2);
-            this.panelHeader.Controls.Add(this.textBox1);
             this.panelHeader.Controls.Add(this.lblTitulo);
             this.panelHeader.Controls.Add(this.txtBuscar);
             this.panelHeader.Controls.Add(this.btnNuevo);
@@ -280,29 +306,24 @@
             this.panelHeader.Size = new System.Drawing.Size(1286, 72);
             this.panelHeader.TabIndex = 1;
             // 
-            // label2
+            // pbHome
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(945, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 28);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Buscar:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(1018, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 26);
-            this.textBox1.TabIndex = 3;
+            this.pbHome.BackColor = System.Drawing.Color.Transparent;
+            this.pbHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbHome.Image = global::CapaPresentacion.Properties.Resources.Musa1;
+            this.pbHome.Location = new System.Drawing.Point(5, 3);
+            this.pbHome.Name = "pbHome";
+            this.pbHome.Size = new System.Drawing.Size(256, 62);
+            this.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHome.TabIndex = 4;
+            this.pbHome.TabStop = false;
+            this.pbHome.Click += new System.EventHandler(this.pbHome_Click);
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(312, 22);
+            this.lblTitulo.Location = new System.Drawing.Point(619, 20);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(393, 45);
             this.lblTitulo.TabIndex = 0;
@@ -347,6 +368,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelInsert.BackColor = System.Drawing.Color.White;
             this.panelInsert.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelInsert.Controls.Add(this.txtCita);
+            this.panelInsert.Controls.Add(this.lbCita);
+            this.panelInsert.Controls.Add(this.lbObservaciones);
+            this.panelInsert.Controls.Add(this.txtObservaciones);
+            this.panelInsert.Controls.Add(this.btnActualizar);
             this.panelInsert.Controls.Add(this.button1);
             this.panelInsert.Controls.Add(this.label10);
             this.panelInsert.Controls.Add(this.label9);
@@ -362,10 +388,72 @@
             this.panelInsert.Controls.Add(this.txtMotivoInsert);
             this.panelInsert.Controls.Add(this.cmbEstadoInsert);
             this.panelInsert.Controls.Add(this.btnGuardar);
-            this.panelInsert.Location = new System.Drawing.Point(342, 625);
+            this.panelInsert.Location = new System.Drawing.Point(344, 611);
             this.panelInsert.Name = "panelInsert";
-            this.panelInsert.Size = new System.Drawing.Size(871, 261);
+            this.panelInsert.Size = new System.Drawing.Size(871, 285);
             this.panelInsert.TabIndex = 2;
+            // 
+            // txtCita
+            // 
+            this.txtCita.Location = new System.Drawing.Point(488, 30);
+            this.txtCita.Name = "txtCita";
+            this.txtCita.ReadOnly = true;
+            this.txtCita.Size = new System.Drawing.Size(80, 26);
+            this.txtCita.TabIndex = 20;
+            // 
+            // lbCita
+            // 
+            this.lbCita.AutoSize = true;
+            this.lbCita.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lbCita.Location = new System.Drawing.Point(428, 28);
+            this.lbCita.Name = "lbCita";
+            this.lbCita.Size = new System.Drawing.Size(54, 28);
+            this.lbCita.TabIndex = 19;
+            this.lbCita.Text = "Cita:";
+            // 
+            // lbObservaciones
+            // 
+            this.lbObservaciones.AutoSize = true;
+            this.lbObservaciones.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbObservaciones.Location = new System.Drawing.Point(47, 252);
+            this.lbObservaciones.Name = "lbObservaciones";
+            this.lbObservaciones.Size = new System.Drawing.Size(155, 28);
+            this.lbObservaciones.TabIndex = 18;
+            this.lbObservaciones.Text = "Observaciones:";
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Location = new System.Drawing.Point(183, 256);
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(505, 26);
+            this.txtObservaciones.TabIndex = 17;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(88)))), ((int)(((byte)(118)))));
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(751, 89);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(92, 41);
+            this.btnActualizar.TabIndex = 16;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(88)))), ((int)(((byte)(118)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(751, 140);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 41);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Ver Reporte";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -436,7 +524,6 @@
             this.label1.Size = new System.Drawing.Size(247, 38);
             this.label1.TabIndex = 7;
             this.label1.Text = "Ingreso de Datos:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cboPaciente
             // 
@@ -498,7 +585,6 @@
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // panelCard
             // 
@@ -508,21 +594,46 @@
             this.panelCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelCard.Controls.Add(this.pbReiniciar);
             this.panelCard.Controls.Add(this.pictureBox1);
-            this.panelCard.Controls.Add(this.cmbEstado);
+            this.panelCard.Controls.Add(this.cmbFiltro);
             this.panelCard.Controls.Add(this.dgvCitas);
-            this.panelCard.Location = new System.Drawing.Point(288, 108);
+            this.panelCard.Location = new System.Drawing.Point(289, 98);
             this.panelCard.Name = "panelCard";
             this.panelCard.Padding = new System.Windows.Forms.Padding(16);
             this.panelCard.Size = new System.Drawing.Size(962, 293);
             this.panelCard.TabIndex = 0;
             // 
-            // cmbEstado
+            // pbReiniciar
             // 
-            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstado.Location = new System.Drawing.Point(54, 19);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(179, 28);
-            this.cmbEstado.TabIndex = 0;
+            this.pbReiniciar.BackColor = System.Drawing.Color.Transparent;
+            this.pbReiniciar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbReiniciar.Image = global::CapaPresentacion.Properties.Resources.Reiniciar;
+            this.pbReiniciar.Location = new System.Drawing.Point(281, 19);
+            this.pbReiniciar.Name = "pbReiniciar";
+            this.pbReiniciar.Size = new System.Drawing.Size(32, 28);
+            this.pbReiniciar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbReiniciar.TabIndex = 4;
+            this.pbReiniciar.TabStop = false;
+            this.pbReiniciar.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Embudo;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 22);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cmbFiltro
+            // 
+            this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFiltro.Location = new System.Drawing.Point(54, 19);
+            this.cmbFiltro.Name = "cmbFiltro";
+            this.cmbFiltro.Size = new System.Drawing.Size(179, 28);
+            this.cmbFiltro.TabIndex = 0;
             // 
             // dgvCitas
             // 
@@ -550,94 +661,7 @@
             this.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCitas.Size = new System.Drawing.Size(822, 212);
             this.dgvCitas.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(88)))), ((int)(((byte)(118)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(751, 140);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 41);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Ver Reporte";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.Salir;
-            this.pictureBox4.Location = new System.Drawing.Point(196, 12);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(53, 46);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources._5540603_removebg_preview;
-            this.pictureBox3.Location = new System.Drawing.Point(11, 6);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(49, 56);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = global::CapaPresentacion.Properties.Resources.Buscador;
-            this.pictureBox5.Location = new System.Drawing.Point(1227, 20);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(46, 33);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pbHome
-            // 
-            this.pbHome.BackColor = System.Drawing.Color.Transparent;
-            this.pbHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbHome.Image = global::CapaPresentacion.Properties.Resources.Musa1;
-            this.pbHome.Location = new System.Drawing.Point(5, 3);
-            this.pbHome.Name = "pbHome";
-            this.pbHome.Size = new System.Drawing.Size(256, 62);
-            this.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHome.TabIndex = 4;
-            this.pbHome.TabStop = false;
-            this.pbHome.Click += new System.EventHandler(this.pbHome_Click);
-            // 
-            // pbReiniciar
-            // 
-            this.pbReiniciar.BackColor = System.Drawing.Color.Transparent;
-            this.pbReiniciar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbReiniciar.Image = global::CapaPresentacion.Properties.Resources.Reiniciar;
-            this.pbReiniciar.Location = new System.Drawing.Point(281, 19);
-            this.pbReiniciar.Name = "pbReiniciar";
-            this.pbReiniciar.Size = new System.Drawing.Size(32, 28);
-            this.pbReiniciar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbReiniciar.TabIndex = 4;
-            this.pbReiniciar.TabStop = false;
-            this.pbReiniciar.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Embudo;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 22);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.dgvCitas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvCitas_MouseDown);
             // 
             // FormCitas
             // 
@@ -651,24 +675,23 @@
             this.ShowIcon = false;
             this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormCitas_Load_1);
+            this.Load += new System.EventHandler(this.FormCitas_Load);
             this.panelSidebar.ResumeLayout(false);
             this.panelSidebar.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             this.panelContent.ResumeLayout(false);
             this.panelInsert.ResumeLayout(false);
             this.panelInsert.PerformLayout();
             this.panelCard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbReiniciar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -677,8 +700,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPacientes;
         private System.Windows.Forms.Button btnHistorial;
         private System.Windows.Forms.Button btnCitas;
@@ -691,7 +712,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRoles;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel separator;
         private System.Windows.Forms.Button btnHorarios;
@@ -704,5 +724,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pbReiniciar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Label lbObservaciones;
+        private System.Windows.Forms.TextBox txtObservaciones;
+        private System.Windows.Forms.TextBox txtCita;
+        private System.Windows.Forms.Label lbCita;
     }
 }

@@ -131,9 +131,13 @@ namespace CapaPresentacion
             // guardar usuario en sesión para acceder desde otros formularios
             Session.CurrentUser = u;
             var inicio = new FormInicio(loggedUser);
-            this.Hide();
-            inicio.ShowDialog();
+            inicio.Show();
             this.Close();
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

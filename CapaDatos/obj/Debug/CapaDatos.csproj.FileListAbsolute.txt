@@ -1,9 +1,9 @@
-C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
-C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaDatos\bin\Debug\CapaDatos.dll
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaDatos\bin\Debug\CapaEntidades.dll
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaDatos\bin\Debug\CapaEntidades.pdb
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaDatos\obj\Debug\CapaDatos.csproj.Up2Date
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaDatos\obj\Debug\CapaDatos.pdb

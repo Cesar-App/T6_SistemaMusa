@@ -1,0 +1,372 @@
+﻿using CapaEntidades;
+using CapaNegocio;
+using System;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class FormCitas : Form
+    {
+        private PacientesBL pacientesBL = new PacientesBL();
+        private MedicosBL medicosBL = new MedicosBL();
+        private CitasBL citasBL = new CitasBL();
+        private int? selectedCitaId = null;
+        public FormCitas()
+        {
+            InitializeComponent();
+            // asignar manejadores básicos
+            this.Load += FormCitas_Load;
+            this.txtBuscar.TextChanged += txtBuscar_TextChanged;
+            this.btnNuevo.Click += btnNuevo_Click;
+            this.dgvCitas.CellContentClick += dgvCitas_CellContentClick;
+            this.dgvCitas.SelectionChanged += dgvCitas_SelectionChanged;
+            this.btnGuardar.Click += BtnGuardar_Click;
+        }
+
+        private void FormCitas_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
+
+        }
+
+        private void CargarDatos()
+        {
+            dgvCitas.DataSource = citasBL.ObtenerTodos();
+
+            // Cargar Pacientes en el combo
+            var pacientes = pacientesBL.ObtenerTodos();
+            cboPaciente.DataSource = pacientes;
+            cboPaciente.DisplayMember = "Nombre";
+            cboPaciente.ValueMember = "Id_Paciente";
+
+            // Cargar Médicos en el combo
+            var medicos = medicosBL.ObtenerTodos();
+            cboMedico.DataSource = medicos;
+            cboMedico.DisplayMember = "Nombre";
+            cboMedico.ValueMember = "Id_Medico";
+
+            // Cargar Estados en el combo
+            cmbEstadoInsert.Items.Clear();
+            cmbEstadoInsert.Items.AddRange(new object[] { "Seleccione...", "Pendiente", "Confirmada", "Atendida" });
+            cmbEstadoInsert.SelectedIndex = 0;
+
+            // configurar columnas de la grilla (ocultar ID_Paciente y ID_Medico, mostrar nombres)
+            dgvCitas.Columns["Id_Paciente"].Visible = false;
+            dgvCitas.Columns["Id_Medico"].Visible = false;
+            dgvCitas.Columns["Estado"].Visible = false;
+            dgvCitas.Columns["Id_Cita"].Visible = false;
+
+            // Renombrar encabezados
+            if (dgvCitas.Columns["Nombre_Paciente"] != null)
+                dgvCitas.Columns["Nombre_Paciente"].HeaderText = "Paciente";
+            if (dgvCitas.Columns["Nombre_Medico"] != null)
+                dgvCitas.Columns["Nombre_Medico"].HeaderText = "Médico";
+
+            // Cargar Filtros de estado
+            cmbFiltro.Items.Clear();
+            cmbFiltro.Items.AddRange(new object[] { "Todos", "Pendiente", "Confirmada", "Atendida" });
+            cmbFiltro.SelectedIndex = 0;
+        }
+
+        private void FiltrarGrilla()
+        {
+            var filtro = "1 = 1";
+            if (!string.IsNullOrWhiteSpace(tbBuscar.Text))
+            {
+                string q = tbBuscar.Text.Replace("'", "''");
+                filtro += $" [Paciente] LIKE '%{q}%')";
+            }
+
+            if (cmbFiltro.SelectedIndex > 0 && cmbFiltro.SelectedItem != null)
+            {
+                string estado = cmbFiltro.SelectedItem.ToString().Replace("'", "''");
+                filtro += $" Estado_Cita = '{estado}'";
+            }
+
+            var dt = dgvCitas.DataSource as DataTable;
+            if (dt != null)
+                dt.DefaultView.RowFilter = filtro.Replace("1 = 1 AND ", "");
+            // else: omitir o aplicar otro método de filtrado
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            // Filtrado usando LINQ sobre la lista de citas
+            try
+            {
+                var q = txtBuscar.Text?.Trim();
+                var todos = citasBL.ObtenerTodos() ?? new System.Collections.Generic.List<Citas>();
+                if (string.IsNullOrWhiteSpace(q))
+                {
+                    dgvCitas.DataSource = todos;
+                }
+                else
+                {
+                    var filtrado = todos
+                        .Where(c => (c.Nombre_Paciente ?? string.Empty).IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0
+                                 || (c.Nombre_Medico ?? string.Empty).IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0
+                                 || (c.Estado_Cita ?? string.Empty).IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0)
+                        .ToList();
+
+                    dgvCitas.DataSource = filtrado;
+                }
+            }
+            catch (Exception)
+            {
+                // evitar que un error de filtrado rompa la UI
+            }
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarGrilla();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Abrir formulario para crear nuevo registro.", "Nuevo Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dgvCitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            if (dgvCitas.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+                var id = dgvCitas.Rows[e.RowIndex].Cells["ID Cita"].Value?.ToString();
+                MessageBox.Show($"Acciones para la cita {id}", "Acciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            // si está en modo eliminar
+            if (btnGuardar.Text == "Eliminar" && selectedCitaId.HasValue)
+            {
+                var confirm = MessageBox.Show($"¿Está seguro de eliminar esta cita? Esta acción no se puede deshacer.",
+                    "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (confirm == DialogResult.Yes)
+                {
+                    try
+                    {
+                        citasBL.Eliminar(selectedCitaId.Value);
+                        MessageBox.Show("Cita eliminada correctamente.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarDatos();
+                        dgvCitas.ClearSelection();
+                        dgvCitas.CurrentCell = null; // evita que quede la celda activa resaltada
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                // resetear estado del botón
+                selectedCitaId = null;
+                btnGuardar.Text = "Guardar";
+                btnGuardar.BackColor = Color.FromArgb(3, 88, 118);
+                btnGuardar.ForeColor = Color.White;
+                return;
+            }
+
+            try
+            {
+                // validar campos mínimos
+                if (cboPaciente.SelectedItem == null) throw new Exception("Seleccione un paciente.");
+                if (cboMedico.SelectedItem == null) throw new Exception("Seleccione un médico.");
+                if (string.IsNullOrWhiteSpace(txtMotivoInsert.Text)) throw new Exception("Ingrese el motivo.");
+
+                // crear entidad
+                var cita = new CapaEntidades.Citas
+                {
+                    Fecha_Cita = dtpFecha.Value.Date,
+                    Hora_Cita = dtpHora.Value.TimeOfDay,
+                    Motivo = txtMotivoInsert.Text.Trim(),
+                    Estado_Cita = cmbEstadoInsert.SelectedItem?.ToString() ?? "Pendiente",
+                    Observacion = txtObservaciones.Text.Trim(),
+                    Id_Paciente = Convert.ToInt32(((dynamic)cboPaciente.SelectedItem).Id_Paciente),
+                    Id_Medico = Convert.ToInt32(((dynamic)cboMedico.SelectedItem).Id_Medico),
+                    Estado = true
+                };
+
+                // insertar usando la capa de negocio
+                var bl = new CapaNegocio.CitasBL();
+                bl.Insertar(cita);
+
+                MessageBox.Show("Cita guardada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // recargar y limpiar selección
+                CargarDatos();
+                dgvCitas.ClearSelection();
+                dgvCitas.CurrentCell = null; // evita que quede la celda activa resaltada
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgvCitas_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvCitas.SelectedRows.Count == 1)
+            {
+                var row = dgvCitas.SelectedRows[0];
+                var cita = row.DataBoundItem as CapaEntidades.Citas;
+                if (cita != null)
+                {
+                    selectedCitaId = cita.Id_Cita;
+                    btnGuardar.Text = "Eliminar";
+                    btnGuardar.BackColor = Color.FromArgb(220, 53, 69); // rojo
+                    btnGuardar.ForeColor = Color.White;
+                    return;
+                }
+            }
+
+            // si no hay selección válida, volver a modo guardar
+            selectedCitaId = null;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.BackColor = Color.FromArgb(3, 88, 118);
+            btnGuardar.ForeColor = Color.White;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCitas_Load_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            FormHorarios formHorarios = new FormHorarios();
+            this.Hide();
+            formHorarios.ShowDialog();
+            this.Show();
+        }
+
+        private void pbHome_Click(object sender, EventArgs e)
+        {
+            FormInicio formInicio = new FormInicio();
+            this.Hide();
+            formInicio.ShowDialog();
+            this.Show();
+        }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            FormCitas formCitas = new FormCitas();
+            this.Hide();
+            formCitas.ShowDialog();
+            this.Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FrmLogin formLogin = new FrmLogin();
+            formLogin.Show();
+            this.Close();
+        }
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+            // llamar al handler principal (compatible con el evento generado por el diseñador)
+            BtnGuardar_Click(sender, e);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LimpiarControles();
+        }
+
+        private void FormCitas_MouseDown(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void dgvCitas_MouseDown(object sender, MouseEventArgs e)
+        {
+            var hit = dgvCitas.HitTest(e.X, e.Y);
+            if (hit.Type == DataGridViewHitTestType.None)
+            {
+                dgvCitas.ClearSelection();
+                dgvCitas.CurrentCell = null;
+                btnGuardar.Text = "Guardar"; // actualizar el texto/estado del botón según tu lógica
+            }
+        }
+
+        private void LimpiarControles()
+        {
+            cboMedico.SelectedIndex = 0;
+            cboPaciente.SelectedIndex = 0;
+            txtMotivoInsert.Clear();
+            cmbEstadoInsert.SelectedIndex = 0;
+            dtpFecha.Value = DateTime.Now;
+            dtpHora.Value = DateTime.Now;
+            txtObservaciones.Clear();
+            selectedCitaId = 0;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idCita = 0;
+                if (dgvCitas.SelectedRows.Count > 0)
+                {
+                    var val = dgvCitas.SelectedRows[0].Cells["id_cita"].Value;
+                    if (!int.TryParse(val?.ToString(), out idCita))
+                        throw new FormatException("Id_Cita no válido.");
+                }
+                else if (!int.TryParse(txtCita.Text, out idCita))
+                {
+                    throw new FormatException("Id_Cita no válido.");
+                }
+
+                var cita = new Citas
+                {
+                    Id_Cita = idCita,
+                    Fecha_Cita = dtpFecha.Value.Date,
+                    Hora_Cita = dtpHora.Value.TimeOfDay,
+                    Motivo = txtMotivoInsert.Text,
+                    Observacion = txtObservaciones.Text,
+                    Id_Paciente = Convert.ToInt32(cboPaciente.SelectedValue),
+                    Id_Medico = Convert.ToInt32(cboMedico.SelectedValue),
+                    Estado_Cita = cmbEstadoInsert.SelectedItem?.ToString()
+                };
+
+                citasBL.Actualizar(cita);
+
+                MessageBox.Show("Cita actualizada.");
+                CargarDatos();
+                dgvCitas.ClearSelection();
+                LimpiarControles();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.Message);
+            }
+        }
+
+        private void tbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = txtBuscar.Text.ToLower();
+
+            var filtrado = citasBL.ObtenerTodos()
+                .Where(c => c.Nombre_Paciente.ToLower().Contains(filtro))
+                .ToList();
+
+            dgvCitas.DataSource = filtrado;
+        }
+    }
+}

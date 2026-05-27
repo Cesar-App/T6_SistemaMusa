@@ -29,7 +29,10 @@ namespace CapaDatos
                         Password = dr["password"].ToString(),
                         Nombre = dr["nombre"].ToString(),
                         Id_Rol = Convert.ToInt32(dr["id_rol"]),
-                        Estado = Convert.ToBoolean(dr["estado"])
+                        Estado = Convert.ToBoolean(dr["estado"]),
+
+                        // Para Mostrar los nombres en lugar de los IDs
+                        Nombre_Rol = dr["Nombre_Rol"].ToString(),
                     });
                 }
             }
@@ -42,10 +45,13 @@ namespace CapaDatos
             Usuarios obj = null;
             using (SqlConnection con = Conexion.ObtenerConexion())
             {
-                // Usamos sp_ObtenerUsuarios y filtramos en memoria,
-                // o una consulta directa a la vista (no hay SP de login en tu BD)
                 SqlCommand cmd = new SqlCommand(
-                    "SELECT * FROM Usuarios WHERE username=@user AND password=@pass AND estado=1", con);
+                    @"SELECT u.id_usuario, u.username, u.password, u.nombre, 
+                     u.id_rol, u.estado, r.nombre AS nombre_rol
+              FROM Usuarios u
+              INNER JOIN Roles r ON u.id_rol = r.id_rol
+              WHERE u.username = @user AND u.password = @pass AND u.estado = 1", con);
+
                 cmd.Parameters.AddWithValue("@user", username);
                 cmd.Parameters.AddWithValue("@pass", password);
                 con.Open();
@@ -59,7 +65,8 @@ namespace CapaDatos
                         Password = dr["password"].ToString(),
                         Nombre = dr["nombre"].ToString(),
                         Id_Rol = Convert.ToInt32(dr["id_rol"]),
-                        Estado = Convert.ToBoolean(dr["estado"])
+                        Estado = Convert.ToBoolean(dr["estado"]),
+                        Nombre_Rol = dr["nombre_rol"].ToString() // ✅ Esto es lo que falta
                     };
                 }
             }

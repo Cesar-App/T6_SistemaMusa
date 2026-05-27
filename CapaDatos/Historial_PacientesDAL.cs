@@ -33,7 +33,10 @@ namespace CapaDatos
                         Tratamiento = dr["tratamiento"].ToString(),
                         Observaciones = dr["observaciones"].ToString(),
                         Fecha_Registro = Convert.ToDateTime(dr["fecha_registro"]),
-                        Estado = Convert.ToBoolean(dr["estado"])
+                        Estado = Convert.ToBoolean(dr["estado"]),
+
+                        // Para Mostrar los nombres en lugar de los IDs
+                        Nombre_Paciente = dr["Nombre_Paciente"].ToString(),
                     });
                 }
             }

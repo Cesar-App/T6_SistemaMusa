@@ -24,7 +24,7 @@ namespace CapaNegocio
             if (obj.Id_Medico <= 0)
                 throw new Exception("Debe seleccionar un médico válido.");
             if (!Array.Exists(EstadosValidos, e => e == obj.Estado_Cita))
-                throw new Exception("Estado inválido. Use: Pendiente, Confirmada, Atendida o Cancelada.");
+                throw new Exception("Perfecto");
             return CitasDAL.Insertar(obj);
         }
 
@@ -37,7 +37,7 @@ namespace CapaNegocio
             if (obj.Id_Medico <= 0)
                 throw new Exception("Debe seleccionar un médico válido.");
             if (!Array.Exists(EstadosValidos, e => e == obj.Estado_Cita))
-                throw new Exception("Estado inválido. Use: Pendiente, Confirmada, Atendida o Cancelada.");
+                throw new Exception("No se encontró el estado de la cita.");
             return CitasDAL.Actualizar(obj);
         }
 

@@ -18,5 +18,8 @@ namespace CapaEntidades
         public string Observaciones { get; set; }
         public DateTime Fecha_Registro { get; set; }
         public bool Estado { get; set; }
+
+        // Propiedad para mostrar el nombre del paciente en lugar del ID
+        public string Nombre_Paciente { get; set; }
     }
 }

@@ -33,7 +33,11 @@ namespace CapaDatos
                         Observacion = dr["observacion"].ToString(),
                         Id_Paciente = Convert.ToInt32(dr["id_paciente"]),
                         Id_Medico = Convert.ToInt32(dr["id_medico"]),
-                        Estado = Convert.ToBoolean(dr["estado"])
+                        Estado = Convert.ToBoolean(dr["estado"]),
+
+                        // Para Mostrar los nombres en lugar de los IDs
+                        Nombre_Paciente = dr["Nombre_Paciente"].ToString(),
+                        Nombre_Medico = dr["Nombre_Medico"].ToString()
                     });
                 }
             }

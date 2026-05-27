@@ -16,13 +16,15 @@ namespace CapaPresentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            /*
+            
             FrmLogin login = new FrmLogin();
             login.Show();
 
             Application.Run();
+            
+            /*
+            Application.Run(new FormInicio());
             */
-            Application.Run(new FrmLogin());
         }
     }
 }

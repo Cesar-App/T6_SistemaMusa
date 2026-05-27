@@ -1,17 +1,23 @@
 ﻿using CapaEntidades;
 using CapaNegocio;
 using System;
+using System.CodeDom;
 using System.Data;
-using System.Drawing;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
     public partial class FormInicio : Form
     {
+        private BackupBL backupBL = new BackupBL();
         private CapaEntidades.Usuarios currentUser;
         private System.Windows.Forms.Timer clockTimer;
+        private const string DATABASE_NAME = "SistemaConsultasMedicasMusa";
+        private const string BACKUP_FOLDER = @"C:\Backups\";
 
         public FormInicio()
         {
@@ -26,20 +32,16 @@ namespace CapaPresentacion
             if (!string.IsNullOrWhiteSpace(usuario?.Nombre))
                 this.lbBienvenida.Text = $"Bienvenido, {usuario.Nombre}";
 
-            // mostrar nombre y rol en el sidebar (label3 y label4 en el designer)
             var lblNombre = this.Controls.Find("label3", true).FirstOrDefault() as Label;
             var lblRol = this.Controls.Find("label4", true).FirstOrDefault() as Label;
             if (lblNombre != null) lblNombre.Text = usuario.Nombre;
-            if (lblRol != null) lblRol.Text = usuario.Id_Rol.ToString();
-        }
+            if (lblRol != null) lblRol.Text = usuario.Nombre_Rol;
 
-        private void FormCitas_Load(object sender, EventArgs e)
-        {
+            PermisosHelper.AplicarPermisos(this);
         }
 
         private void FormInicio_Load(object sender, EventArgs e)
         {
-            // si no se pasó el usuario por el constructor, intentar obtenerlo de la sesión
             if (currentUser == null && Session.CurrentUser != null)
             {
                 currentUser = Session.CurrentUser;
@@ -48,19 +50,31 @@ namespace CapaPresentacion
                 var lblNombre = this.Controls.Find("label3", true).FirstOrDefault() as Label;
                 var lblRol = this.Controls.Find("label4", true).FirstOrDefault() as Label;
                 if (lblNombre != null) lblNombre.Text = currentUser.Nombre;
-                if (lblRol != null) lblRol.Text = currentUser.Id_Rol.ToString();
+                if (lblRol != null) lblRol.Text = currentUser.Nombre_Rol;
             }
 
-            // iniciar timer para hora en tiempo real (guardado en campo para evitar GC)
+            PermisosHelper.AplicarPermisos(this);
+
+            // Timer para hora en tiempo real
             clockTimer = new System.Windows.Forms.Timer();
             clockTimer.Interval = 1000;
             clockTimer.Tick += Timer_Tick;
             clockTimer.Start();
-        }
 
-        private void FormCitas_Load_1(object sender, EventArgs e)
-        {
+            // Cargar tipos de backup en el combo
+            cmbTipoBackup.Items.Clear();
+            cmbTipoBackup.Items.AddRange(new object[]
+            {
+                "Seleccione...",
+                "Completo",
+                "Diferencial",
+                "Log de Transacciones"
+            });
+            cmbTipoBackup.SelectedIndex = 0;
 
+            // Crear carpeta de backups si no existe
+            if (!Directory.Exists(BACKUP_FOLDER))
+                Directory.CreateDirectory(BACKUP_FOLDER);
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -68,25 +82,48 @@ namespace CapaPresentacion
             lbHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-        private void btnHorarios_Click(object sender, EventArgs e)
+        // ===================== NAVEGACIÓN =====================
+
+        private void pbHome_Click(object sender, EventArgs e)
         {
-            FormHorarios formHorarios = new FormHorarios();
-            this.Hide();
-            formHorarios.ShowDialog();
-            this.Show();
+            this.lbBienvenida.Text = currentUser != null
+                ? $"Bienvenido al Sistema de Gestion de Citas, {currentUser.Nombre}"
+                : this.lbBienvenida.Text;
         }
 
         private void btnCitas_Click(object sender, EventArgs e)
         {
             FormCitas formCitas = new FormCitas();
-            this.Hide();
-            formCitas.ShowDialog();
-            this.Show();
+            formCitas.Show();
+            this.Close();
         }
 
-        private void pbHome_Click(object sender, EventArgs e)
+        private void btnHorarios_Click(object sender, EventArgs e)
         {
-            this.lbBienvenida.Text = currentUser != null ? $"Bienvenido, {currentUser.Nombre}" : this.lbBienvenida.Text;
+            FormHorarios formHorarios = new FormHorarios();
+            formHorarios.Show();
+            this.Close();
+        }
+
+        private void btnMedicos_Click(object sender, EventArgs e)
+        {
+            FormMedicos formMedicos = new FormMedicos();
+            formMedicos.Show();
+            this.Close();
+        }
+
+        private void btnEspecialidades_Click(object sender, EventArgs e)
+        {
+            FormEspecialidades formEspecialidades = new FormEspecialidades();
+            formEspecialidades.Show();
+            this.Close();
+        }
+
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            FormHistorialCitas formHistorial = new FormHistorialCitas();
+            formHistorial.Show();
+            this.Close();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -94,6 +131,95 @@ namespace CapaPresentacion
             FrmLogin formLogin = new FrmLogin();
             formLogin.Show();
             this.Close();
+        }
+
+        // ===================== BACKUP =====================
+        private void btnBackup_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbTipoBackup.SelectedIndex <= 0)
+                    throw new Exception("Seleccione el tipo de backup.");
+
+                string tipo = cmbTipoBackup.SelectedItem.ToString();
+                string fecha = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                string extension = ".bak";
+                string tipoSQL = "";
+                string sufijo = "";
+
+                switch (tipo)
+                {
+                    case "Completo":
+                        tipoSQL = "FULL";
+                        sufijo = "FULL";
+                        break;
+                    case "Diferencial":
+                        tipoSQL = "DIFFERENTIAL";
+                        sufijo = "DIFF";
+                        break;
+                    case "Log de Transacciones":
+                        tipoSQL = "LOG";
+                        sufijo = "LOG";
+                        extension = ".trn";
+                        break;
+                }
+
+                string fileName = $"{DATABASE_NAME}_{sufijo}_{fecha}{extension}";
+                string filePath = Path.Combine(BACKUP_FOLDER, fileName);
+
+                string query = tipo == "Log de Transacciones"
+                    ? $"BACKUP LOG [{DATABASE_NAME}] TO DISK = '{filePath}' WITH INIT, STATS = 10"
+                    : $"BACKUP DATABASE [{DATABASE_NAME}] TO DISK = '{filePath}' WITH {tipoSQL}, INIT, STATS = 10";
+
+                backupBL.HacerBackup(filePath, tipoSQL);
+
+                MessageBox.Show($"Backup {tipo} realizado correctamente.\n\nArchivo: {fileName}\nUbicación: {BACKUP_FOLDER}",
+                    "Backup Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al realizar el backup: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // ===================== RESTAURAR =====================
+
+        private void btnRestaurar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                // Abrir explorador de archivos filtrando solo .bak y .trn
+                ofdBackup.Title = "Seleccionar archivo de Backup";
+                ofdBackup.Filter = "Archivos de Backup (*.bak;*.trn)|*.bak;*.trn";
+                ofdBackup.InitialDirectory = BACKUP_FOLDER;
+
+                if (ofdBackup.ShowDialog() != DialogResult.OK) return;
+
+                string filePath = ofdBackup.FileName;
+
+                var confirm = MessageBox.Show(
+                    $"¿Está seguro de restaurar el backup?\n\nArchivo: {Path.GetFileName(filePath)}\n\n⚠️ Esto reemplazará todos los datos actuales.",
+                    "Confirmar Restauración", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (confirm != DialogResult.Yes) return;
+
+                // Cerrar conexiones activas antes de restaurar
+                string killQuery = $@"
+                    ALTER DATABASE [{DATABASE_NAME}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+                    RESTORE DATABASE [{DATABASE_NAME}] FROM DISK = '{filePath}' WITH REPLACE;
+                    ALTER DATABASE [{DATABASE_NAME}] SET MULTI_USER;";
+
+                backupBL.RestaurarBackup(filePath);
+
+                MessageBox.Show("Base de datos restaurada correctamente.",
+                    "Restauración Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al restaurar: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

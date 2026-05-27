@@ -14,5 +14,8 @@ namespace CapaEntidades
         public string Usuario { get; set; }
         public int Id_Cita { get; set; }
         public bool Estado { get; set; }
+
+        // Propiedad para mostrar el nombre del usuario en lugar del ID
+        public string Nombre_Paciente_Cita { get; set; }
     }
 }

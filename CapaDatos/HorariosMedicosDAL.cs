@@ -29,7 +29,10 @@ namespace CapaDatos
                         Hora_Inicio = (TimeSpan)dr["hora_inicio"],
                         Hora_Fin = (TimeSpan)dr["hora_fin"],
                         Id_Medico = Convert.ToInt32(dr["id_medico"]),
-                        Estado = Convert.ToBoolean(dr["estado"])
+                        Estado = Convert.ToBoolean(dr["estado"]),
+
+                        // Para Mostrar los nombres en lugar de los IDs
+                        Nombre_Medico = dr["Nombre_Medico"].ToString()
                     });
                 }
             }

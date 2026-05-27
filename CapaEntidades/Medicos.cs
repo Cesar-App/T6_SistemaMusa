@@ -15,5 +15,8 @@ namespace CapaEntidades
         public string Correo { get; set; }
         public int Id_Especialidad { get; set; }
         public bool Estado { get; set; }
+
+        // Propiedad para mostrar el nombre de la especialidad en lugar del ID
+        public string Nombre_Especialidad { get; set; }
     }
 }

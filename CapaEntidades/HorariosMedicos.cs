@@ -14,5 +14,8 @@ namespace CapaEntidades
         public TimeSpan Hora_Fin { get; set; }
         public int Id_Medico { get; set; }
         public bool Estado { get; set; }
+
+        // Propiedad para mostrar el nombre del médico en lugar del ID
+        public string Nombre_Medico { get; set; }
     }
 }

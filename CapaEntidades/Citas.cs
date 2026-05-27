@@ -17,5 +17,9 @@ namespace CapaEntidades
         public int Id_Paciente { get; set; }
         public int Id_Medico { get; set; }
         public bool Estado { get; set; }
+
+        // Para mostrar en la grilla, no se mapean a la base
+        public string Nombre_Paciente { get; set; }
+        public string Nombre_Medico { get; set; }
     }
 }

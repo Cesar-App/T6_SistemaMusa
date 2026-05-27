@@ -1,0 +1,311 @@
+﻿using CapaEntidades;
+using CapaNegocio;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class FormHistorialCitas : Form
+    {
+        private Horarios_MedicosBL horariosBL = new Horarios_MedicosBL();
+        private MedicosBL medicosBL = new MedicosBL();
+        private int? selectedHorarioId = null;
+        private List<Horarios_Medicos> todosLosHorarios = new List<Horarios_Medicos>();
+
+        public FormHistorialCitas()
+        {
+            InitializeComponent();
+            this.Load += FormHistorialCitas_Load;
+            this.txtBuscar.TextChanged += txtBuscar_TextChanged;
+            this.cmbFiltro.SelectedIndexChanged += cmbFiltro_SelectedIndexChanged;
+            
+            this.dgvHorarios.SelectionChanged += dgvHorarios_SelectionChanged;
+            this.dgvHorarios.MouseDown += dgvHorarios_MouseDown;
+            
+            this.btnGuardar.Click += BtnGuardar_Click;
+            this.btnActualizar.Click += btnActualizar_Click;
+
+            // Opciones del combo día
+            cmbDiaSemana.Items.Clear();
+            cmbDiaSemana.Items.AddRange(new object[]
+            {
+                "Seleccione...", "Lunes", "Martes", "Miércoles",
+                "Jueves", "Viernes", "Sábado", "Domingo"
+            });
+            cmbDiaSemana.SelectedIndex = 0;
+        }
+
+        // ===================== CARGA =====================
+
+        private void FormHorarios_Load(object sender, EventArgs e)
+        {
+            CargarCombos();
+            CargarDatos();
+        }
+
+        private void CargarCombos()
+        {
+            // Médicos
+            var medicos = medicosBL.ObtenerTodos();
+            cboMedico.DataSource = medicos;
+            cboMedico.DisplayMember = "Nombre";
+            cboMedico.ValueMember = "Id_Medico";
+
+            // Filtro por día
+            cmbFiltro.Items.Clear();
+            cmbFiltro.Items.AddRange(new object[]
+            {
+                "Todos", "Lunes", "Martes", "Miercoles",
+                "Jueves", "Viernes", "Sabado", "Domingo"
+            });
+            cmbFiltro.SelectedIndex = 0;
+        }
+
+        private void CargarDatos()
+        {
+            todosLosHorarios = horariosBL.ObtenerTodos() ?? new List<Horarios_Medicos>();
+            
+            dgvHorarios.DataSource = null;
+            dgvHorarios.DataSource = todosLosHorarios;
+
+            // Ocultar columnas
+            if (dgvHorarios.Columns["Id_Horario"] != null) dgvHorarios.Columns["Id_Horario"].Visible = false;
+            if (dgvHorarios.Columns["Id_Medico"] != null) dgvHorarios.Columns["Id_Medico"].Visible = false;
+            if (dgvHorarios.Columns["Estado"] != null) dgvHorarios.Columns["Estado"].Visible = false;
+
+            // Renombrar encabezados
+            if (dgvHorarios.Columns["Dia_Semana"] != null) dgvHorarios.Columns["Dia_Semana"].HeaderText = "Día";
+            if (dgvHorarios.Columns["Hora_Inicio"] != null) dgvHorarios.Columns["Hora_Inicio"].HeaderText = "Hora Inicio";
+            if (dgvHorarios.Columns["Hora_Fin"] != null) dgvHorarios.Columns["Hora_Fin"].HeaderText = "Hora Fin";
+            if (dgvHorarios.Columns["Nombre_Medico"] != null) dgvHorarios.Columns["Nombre_Medico"].HeaderText = "Médico";
+            
+        }
+
+        // ===================== FILTROS =====================
+
+        private void AplicarFiltros()
+        {
+            var texto = txtBuscar.Text?.Trim() ?? string.Empty;
+            var dia = cmbFiltro.SelectedIndex > 0 ? cmbFiltro.SelectedItem.ToString() : string.Empty;
+
+            var filtrado = todosLosHorarios
+                .Where(h =>
+                    (string.IsNullOrWhiteSpace(texto) ||
+                        (h.Nombre_Medico ?? "").IndexOf(texto, StringComparison.OrdinalIgnoreCase) >= 0)
+                    &&
+                    (string.IsNullOrWhiteSpace(dia) ||
+                        (h.Dia_Semana ?? "").Equals(dia, StringComparison.OrdinalIgnoreCase))
+                )
+                .ToList();
+            
+            dgvHorarios.DataSource = null;
+            dgvHorarios.DataSource = filtrado;
+            
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e) => AplicarFiltros();
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e) => AplicarFiltros();
+
+        // ===================== SELECCIÓN EN GRILLA =====================
+
+        private void dgvHorarios_SelectionChanged(object sender, EventArgs e)
+        {
+            
+            if (dgvHorarios.SelectedRows.Count == 1)
+            {
+                var horario = dgvHorarios.SelectedRows[0].DataBoundItem as Horarios_Medicos;
+                if (horario != null)
+                {
+                    selectedHorarioId = horario.Id_Horario;
+                    cmbDiaSemana.SelectedItem = horario.Dia_Semana;
+                    dtpHoraInicio.Value = DateTime.Today.Add(horario.Hora_Inicio);
+                    dtpHoraFin.Value = DateTime.Today.Add(horario.Hora_Fin);
+                    cboMedico.SelectedValue = horario.Id_Medico;
+
+                    // Cambiar botón a modo eliminar
+                    btnGuardar.Text = "Eliminar";
+                    btnGuardar.BackColor = Color.FromArgb(220, 53, 69);
+                    btnGuardar.ForeColor = Color.White;
+                    return;
+                }
+            }
+            
+
+            // Sin selección, volver a modo guardar
+            selectedHorarioId = null;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.BackColor = Color.FromArgb(3, 88, 118);
+            btnGuardar.ForeColor = Color.White;
+        }
+
+        private void dgvHorarios_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+            var hit = dgvHorarios.HitTest(e.X, e.Y);
+            if (hit.Type == DataGridViewHitTestType.None)
+            {
+                dgvHorarios.ClearSelection();
+                dgvHorarios.CurrentCell = null;
+            }
+            
+        }
+
+        // ===================== GUARDAR / ELIMINAR =====================
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            // Modo eliminar
+            if (btnGuardar.Text == "Eliminar" && selectedHorarioId.HasValue)
+            {
+                var confirm = MessageBox.Show("¿Está seguro de eliminar este horario? Esta acción no se puede deshacer.",
+                    "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    try
+                    {
+                        horariosBL.Eliminar(selectedHorarioId.Value);
+                        MessageBox.Show("Horario eliminado correctamente.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarDatos();
+                        LimpiarControles();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                // Resetear botón
+                selectedHorarioId = null;
+                btnGuardar.Text = "Guardar";
+                btnGuardar.BackColor = Color.FromArgb(3, 88, 118);
+                btnGuardar.ForeColor = Color.White;
+                return;
+            }
+
+            // Modo guardar
+            try
+            {
+                if (cboMedico.SelectedItem == null) throw new Exception("Seleccione un médico.");
+                if (cmbDiaSemana.SelectedIndex <= 0) throw new Exception("Seleccione el día de la semana.");
+                if (dtpHoraFin.Value.TimeOfDay <= dtpHoraInicio.Value.TimeOfDay)
+                    throw new Exception("La hora de fin debe ser mayor que la hora de inicio.");
+
+                var horario = new Horarios_Medicos
+                {
+                    Dia_Semana = cmbDiaSemana.SelectedItem.ToString(),
+                    Hora_Inicio = dtpHoraInicio.Value.TimeOfDay,
+                    Hora_Fin = dtpHoraFin.Value.TimeOfDay,
+                    Id_Medico = Convert.ToInt32(cboMedico.SelectedValue)
+                };
+
+                horariosBL.Insertar(horario);
+                MessageBox.Show("Horario guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarDatos();
+                LimpiarControles();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        // ===================== ACTUALIZAR =====================
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!selectedHorarioId.HasValue) throw new Exception("Seleccione un horario de la tabla para actualizar.");
+                if (cboMedico.SelectedItem == null) throw new Exception("Seleccione un médico.");
+                if (cmbDiaSemana.SelectedIndex <= 0) throw new Exception("Seleccione el día de la semana.");
+                if (dtpHoraFin.Value.TimeOfDay <= dtpHoraInicio.Value.TimeOfDay)
+                    throw new Exception("La hora de fin debe ser mayor que la hora de inicio.");
+
+                var horario = new Horarios_Medicos
+                {
+                    Id_Horario = selectedHorarioId.Value,
+                    Dia_Semana = cmbDiaSemana.SelectedItem.ToString(),
+                    Hora_Inicio = dtpHoraInicio.Value.TimeOfDay,
+                    Hora_Fin = dtpHoraFin.Value.TimeOfDay,
+                    Id_Medico = Convert.ToInt32(cboMedico.SelectedValue)
+                };
+
+                horariosBL.Actualizar(horario);
+                MessageBox.Show("Horario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarDatos();
+                LimpiarControles();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        // ===================== LIMPIAR =====================
+
+        private void LimpiarControles()
+        {
+            cmbDiaSemana.SelectedIndex = 0;
+            dtpHoraInicio.Value = DateTime.Now;
+            dtpHoraFin.Value = DateTime.Now;
+            cboMedico.SelectedIndex = 0;
+            selectedHorarioId = null;
+            
+            dgvHorarios.ClearSelection();
+            dgvHorarios.CurrentCell = null;
+            
+            // Restaurar botón a modo guardar
+            btnGuardar.Text = "Guardar";
+            btnGuardar.BackColor = Color.FromArgb(3, 88, 118);
+            btnGuardar.ForeColor = Color.White;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e) => LimpiarControles();
+
+        // ===================== NAVEGACIÓN =====================
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            FormCitas formCitas = new FormCitas();
+            formCitas.Show();
+            this.Close();
+        }
+
+        private void pbHome_Click(object sender, EventArgs e)
+        {
+            FormInicio formInicio = new FormInicio();
+            formInicio.Show();
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // Ya estás en Horarios, no hacer nada
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FrmLogin formLogin = new FrmLogin();
+            formLogin.Show();
+            this.Close();
+        }
+
+        private void btnMedicos_Click(object sender, EventArgs e)
+        {
+            FormMedicos formMedicos = new FormMedicos();
+            formMedicos.Show();
+            this.Close();
+        }
+
+        private void btnEspecialidades_Click(object sender, EventArgs e)
+        {
+            FormEspecialidades formEspecialidades = new FormEspecialidades();
+            formEspecialidades.Show();
+            this.Close();
+        }
+    }
+}
