@@ -95,5 +95,30 @@ namespace CapaPresentacion
             formLogin.Show();
             this.Close();
         }
+
+        private void btnMedicos_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+
+            FormGestiondeUsuarios frm = new FormGestiondeUsuarios();
+            frm.Show();
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+
+            FormGestiondeRoles frm = new FormGestiondeRoles();
+            frm.Show();
+        }
+
+        private void btnPacientes_Click(object sender, EventArgs e)
+        {
+            FormGestiondePacientes frm = new FormGestiondePacientes();
+            frm.Show();
+        }
     }
 }

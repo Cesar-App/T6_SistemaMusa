@@ -4,3 +4,9 @@ C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaEntidades\obj\Debug\CapaEntid
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaEntidades\obj\Debug\CapaEntidades.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaEntidades\obj\Debug\CapaEntidades.dll
 C:\Users\ADMIN\source\repos\App.C#\SistemaMusa\CapaEntidades\obj\Debug\CapaEntidades.pdb
+C:\Users\santa\T6_SistemaMusa\CapaEntidades\bin\Debug\CapaEntidades.dll
+C:\Users\santa\T6_SistemaMusa\CapaEntidades\bin\Debug\CapaEntidades.pdb
+C:\Users\santa\T6_SistemaMusa\CapaEntidades\obj\Debug\CapaEntidades.csproj.AssemblyReference.cache
+C:\Users\santa\T6_SistemaMusa\CapaEntidades\obj\Debug\CapaEntidades.csproj.CoreCompileInputs.cache
+C:\Users\santa\T6_SistemaMusa\CapaEntidades\obj\Debug\CapaEntidades.dll
+C:\Users\santa\T6_SistemaMusa\CapaEntidades\obj\Debug\CapaEntidades.pdb

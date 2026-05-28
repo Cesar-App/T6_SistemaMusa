@@ -16,10 +16,14 @@ namespace CapaNegocio
         {
             if (string.IsNullOrWhiteSpace(obj.Nombre))
                 throw new System.Exception("El nombre del paciente es obligatorio.");
-            if (string.IsNullOrWhiteSpace(obj.Apellido))
-                throw new System.Exception("El apellido del paciente es obligatorio.");
             if (string.IsNullOrWhiteSpace(obj.Cedula))
-                throw new System.Exception("La cédula del paciente es obligatoria.");
+                throw new System.Exception("La Cedula del paciente es obligatorio.");
+            if (string.IsNullOrWhiteSpace(obj.Telefono))
+                throw new System.Exception("El Telefono del paciente es obligatoria.");
+            if (obj.Fecha_Nacimiento == null)
+                throw new System.Exception("La Fecha_Nacimiento del paciente es obligatoria.");
+            if (string.IsNullOrWhiteSpace(obj.Sexo))
+                throw new System.Exception("El Sexo del paciente es obligatoria.");
             return PacientesDAL.Insertar(obj);
         }
 
@@ -27,10 +31,14 @@ namespace CapaNegocio
         {
             if (string.IsNullOrWhiteSpace(obj.Nombre))
                 throw new System.Exception("El nombre del paciente es obligatorio.");
-            if (string.IsNullOrWhiteSpace(obj.Apellido))
-                throw new System.Exception("El apellido del paciente es obligatorio.");
             if (string.IsNullOrWhiteSpace(obj.Cedula))
-                throw new System.Exception("La cédula del paciente es obligatoria.");
+                throw new System.Exception("La Cedula del paciente es obligatorio.");
+            if (string.IsNullOrWhiteSpace(obj.Telefono))
+                throw new System.Exception("El Telefono del paciente es obligatoria.");
+            if (obj.Fecha_Nacimiento == null)
+                throw new System.Exception("La Fecha_Nacimiento del paciente es obligatoria.");
+            if (string.IsNullOrWhiteSpace(obj.Sexo))
+                throw new System.Exception("el Sexo del paciente es obligatoria.");
             return PacientesDAL.Actualizar(obj);
         }
         public int Eliminar(int id) => PacientesDAL.Eliminar(id);

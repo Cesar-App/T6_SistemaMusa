@@ -10,7 +10,7 @@ namespace CapaDatos
 {
     public class Conexion
     {
-        private static string cadena = "Server=DESKTOP-MF82B4K;Database=SistemaConsultasMedicasMusa;Integrated Security=True;";
+        private static string cadena = "Server=STARLINGDAVID;Database=SistemaConsultasMedicasMusa;Integrated Security=True;";
 
         public static SqlConnection ObtenerConexion()
         {

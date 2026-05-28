@@ -26,7 +26,6 @@ namespace CapaDatos
                     {
                         Id_Usuario = Convert.ToInt32(dr["id_usuario"]),
                         Username = dr["username"].ToString(),
-                        Password = dr["password"].ToString(),
                         Nombre = dr["nombre"].ToString(),
                         Id_Rol = Convert.ToInt32(dr["id_rol"]),
                         Estado = Convert.ToBoolean(dr["estado"])
@@ -56,7 +55,6 @@ namespace CapaDatos
                     {
                         Id_Usuario = Convert.ToInt32(dr["id_usuario"]),
                         Username = dr["username"].ToString(),
-                        Password = dr["password"].ToString(),
                         Nombre = dr["nombre"].ToString(),
                         Id_Rol = Convert.ToInt32(dr["id_rol"]),
                         Estado = Convert.ToBoolean(dr["estado"])
@@ -73,7 +71,6 @@ namespace CapaDatos
                 SqlCommand cmd = new SqlCommand("sp_InsertarUsuario", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@username", obj.Username);
-                cmd.Parameters.AddWithValue("@password", obj.Password);
                 cmd.Parameters.AddWithValue("@nombre", obj.Nombre);
                 cmd.Parameters.AddWithValue("@id_rol", obj.Id_Rol);
                 con.Open();
@@ -88,13 +85,30 @@ namespace CapaDatos
                 SqlCommand cmd = new SqlCommand("sp_ActualizarUsuario", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_usuario", obj.Id_Usuario);
-                cmd.Parameters.AddWithValue("@username", obj.Username);
-                cmd.Parameters.AddWithValue("@password", obj.Password);
+                cmd.Parameters.AddWithValue("@username", obj.Username);               
                 cmd.Parameters.AddWithValue("@nombre", obj.Nombre);
                 cmd.Parameters.AddWithValue("@id_rol", obj.Id_Rol);
                 con.Open();
                 return cmd.ExecuteNonQuery();
             }
+        }
+
+
+        public static DataTable ObtenerUsuarios()
+        {
+            SqlConnection con = Conexion.ObtenerConexion();
+
+            DataTable dt = new DataTable();
+
+            SqlCommand cmd = new SqlCommand("sp_ObtenerUsuarios", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(dt);
+
+            return dt;
         }
 
         public static int Eliminar(int id)
@@ -107,6 +121,7 @@ namespace CapaDatos
                 con.Open();
                 return cmd.ExecuteNonQuery();
             }
+
         }
     }
 }

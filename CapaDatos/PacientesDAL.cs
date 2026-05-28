@@ -45,15 +45,16 @@ namespace CapaDatos
         {
             using (SqlConnection con = Conexion.ObtenerConexion())
             {
+               
                 SqlCommand cmd = new SqlCommand("sp_InsertarPaciente", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nombre", obj.Nombre);
-                cmd.Parameters.AddWithValue("@apellido", obj.Apellido);
+                cmd.Parameters.AddWithValue("@apellido", obj.Apellido ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@cedula", obj.Cedula);
-                cmd.Parameters.AddWithValue("@telefono", obj.Telefono ?? (object)DBNull.Value);
-                cmd.Parameters.AddWithValue("@direccion", obj.Direccion ?? (object)DBNull.Value);
-                cmd.Parameters.AddWithValue("@fecha_nacimiento", obj.Fecha_Nacimiento ?? (object)DBNull.Value);
-                cmd.Parameters.AddWithValue("@sexo", obj.Sexo ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@telefono", obj.Telefono);
+                cmd.Parameters.AddWithValue("@direccion", obj.Direccion);
+                cmd.Parameters.AddWithValue("@fecha_nacimiento", obj.Fecha_Nacimiento);
+                cmd.Parameters.AddWithValue("@sexo", obj.Sexo);
                 con.Open();
                 return cmd.ExecuteNonQuery();
             }
@@ -63,16 +64,17 @@ namespace CapaDatos
         {
             using (SqlConnection con = Conexion.ObtenerConexion())
             {
+                
                 SqlCommand cmd = new SqlCommand("sp_ActualizarPaciente", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_paciente", obj.Id_Paciente);
                 cmd.Parameters.AddWithValue("@nombre", obj.Nombre);
-                cmd.Parameters.AddWithValue("@apellido", obj.Apellido);
+                cmd.Parameters.AddWithValue("@apellido", obj.Apellido ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@cedula", obj.Cedula);
-                cmd.Parameters.AddWithValue("@telefono", obj.Telefono ?? (object)DBNull.Value);
-                cmd.Parameters.AddWithValue("@direccion", obj.Direccion ?? (object)DBNull.Value);
-                cmd.Parameters.AddWithValue("@fecha_nacimiento", obj.Fecha_Nacimiento ?? (object)DBNull.Value);
-                cmd.Parameters.AddWithValue("@sexo", obj.Sexo ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@telefono", obj.Telefono);
+                cmd.Parameters.AddWithValue("@direccion", obj.Direccion);
+                cmd.Parameters.AddWithValue("@fecha_nacimiento", obj.Fecha_Nacimiento);
+                cmd.Parameters.AddWithValue("@sexo", obj.Sexo);
                 con.Open();
                 return cmd.ExecuteNonQuery();
             }

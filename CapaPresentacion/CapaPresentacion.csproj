@@ -53,6 +53,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGestiondePacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestiondePacientes.Designer.cs">
+      <DependentUpon>FormGestiondePacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestiondeRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestiondeRoles.Designer.cs">
+      <DependentUpon>FormGestiondeRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestiondeUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestiondeUsuarios.Designer.cs">
+      <DependentUpon>FormGestiondeUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +94,15 @@
     <Compile Include="Session.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestiondePacientes.resx">
+      <DependentUpon>FormGestiondePacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestiondeRoles.resx">
+      <DependentUpon>FormGestiondeRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestiondeUsuarios.resx">
+      <DependentUpon>FormGestiondeUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
@@ -110,6 +137,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{5d99adf2-85dc-4164-8215-717fa2e9cb44}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
       <Project>{b7dc4f94-a624-45d1-8877-1e062e0a9798}</Project>
       <Name>CapaEntidades</Name>

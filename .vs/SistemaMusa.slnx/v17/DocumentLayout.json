@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\santa\\T6_SistemaMusa\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\santa\\T6_SistemaMusa\\capapresentacion\\formgestiondepacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formgestiondepacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\santa\\T6_SistemaMusa\\capapresentacion\\formgestiondepacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formgestiondepacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\santa\\t6_sistemamusa\\capapresentacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 445,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\santa\\T6_SistemaMusa\\CapaPresentacion\\Program.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\Program.cs",
+              "ToolTip": "C:\\Users\\santa\\T6_SistemaMusa\\CapaPresentacion\\Program.cs",
+              "RelativeToolTip": "CapaPresentacion\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T22:04:51.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormGestiondePacientes.cs",
+              "DocumentMoniker": "C:\\Users\\santa\\T6_SistemaMusa\\CapaPresentacion\\FormGestiondePacientes.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormGestiondePacientes.cs",
+              "ToolTip": "C:\\Users\\santa\\T6_SistemaMusa\\CapaPresentacion\\FormGestiondePacientes.cs",
+              "RelativeToolTip": "CapaPresentacion\\FormGestiondePacientes.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAIwG8AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T00:25:56.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormGestiondePacientes.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\santa\\T6_SistemaMusa\\CapaPresentacion\\FormGestiondePacientes.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormGestiondePacientes.cs",
+              "ToolTip": "C:\\Users\\santa\\T6_SistemaMusa\\CapaPresentacion\\FormGestiondePacientes.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CapaPresentacion\\FormGestiondePacientes.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T00:25:30.251Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

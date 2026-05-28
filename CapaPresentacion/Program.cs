@@ -22,7 +22,9 @@ namespace CapaPresentacion
 
             Application.Run();
             */
-            Application.Run(new FrmLogin());
+            Application.Run(new FormGestiondePacientes());
+
         }
     }
-}
+
+    }
