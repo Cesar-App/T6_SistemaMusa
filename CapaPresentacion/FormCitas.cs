@@ -14,7 +14,7 @@ namespace CapaPresentacion
         private MedicosBL medicosBL = new MedicosBL();
         private CitasBL citasBL = new CitasBL();
         private int? selectedCitaId = null;
-        private List<Citas> todasLasCitas = new List<Citas>(); // Lista base para filtrar
+        private List<Citas> todasLasCitas = new List<Citas>();
 
         public FormCitas()
         {
@@ -33,7 +33,6 @@ namespace CapaPresentacion
 
         private void FormCitas_Load(object sender, EventArgs e)
         {
-            // Cargar usuario de sesión en el sidebar
             if (Session.CurrentUser != null)
             {
                 var lblNombre = this.Controls.Find("label3", true).FirstOrDefault() as Label;
@@ -43,7 +42,6 @@ namespace CapaPresentacion
             }
 
             PermisosHelper.AplicarPermisos(this);
-
             CargarCombos();
             CargarDatos();
         }
@@ -119,7 +117,7 @@ namespace CapaPresentacion
         private void txtBuscar_TextChanged(object sender, EventArgs e) => AplicarFiltros();
         private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e) => AplicarFiltros();
 
-        // ===================== FORMATO GRILLA =====================
+        // ===================== GRILLA =====================
 
         private void dgvCitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -155,17 +153,55 @@ namespace CapaPresentacion
                     cmbEstadoInsert.SelectedItem = cita.Estado_Cita;
                     cboPaciente.SelectedValue = cita.Id_Paciente;
                     cboMedico.SelectedValue = cita.Id_Medico;
+
+                    // Cambiar botón a modo eliminar
+                    btnGuardar.Text = "Eliminar";
+                    btnGuardar.BackColor = Color.FromArgb(220, 53, 69);
+                    btnGuardar.ForeColor = Color.White;
                     return;
                 }
             }
 
+            // Sin selección, volver a modo guardar
             selectedCitaId = null;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.BackColor = Color.FromArgb(3, 88, 118);
+            btnGuardar.ForeColor = Color.White;
         }
 
-        // ===================== GUARDAR =====================
+        // ===================== GUARDAR / ELIMINAR =====================
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            // Modo eliminar
+            if (btnGuardar.Text == "Eliminar" && selectedCitaId.HasValue)
+            {
+                var confirm = MessageBox.Show("¿Está seguro de eliminar esta cita? Esta acción no se puede deshacer.",
+                    "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    try
+                    {
+                        citasBL.Eliminar(selectedCitaId.Value);
+                        MessageBox.Show("Cita eliminada correctamente.", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarDatos();
+                        LimpiarControles();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                selectedCitaId = null;
+                btnGuardar.Text = "Guardar";
+                btnGuardar.BackColor = Color.FromArgb(3, 88, 118);
+                btnGuardar.ForeColor = Color.White;
+                return;
+            }
+
+            // Modo guardar
             try
             {
                 if (cboPaciente.SelectedItem == null) throw new Exception("Seleccione un paciente.");
@@ -274,6 +310,11 @@ namespace CapaPresentacion
             selectedCitaId = null;
             dgvCitas.ClearSelection();
             dgvCitas.CurrentCell = null;
+
+            // Restaurar botón
+            btnGuardar.Text = "Guardar";
+            btnGuardar.BackColor = Color.FromArgb(3, 88, 118);
+            btnGuardar.ForeColor = Color.White;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e) => LimpiarControles();
@@ -325,6 +366,12 @@ namespace CapaPresentacion
             FormHistorialCitas formHistorial = new FormHistorialCitas();
             formHistorial.Show();
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormReporteCitas formReporteCitas = new FormReporteCitas();
+            formReporteCitas.Show();
         }
     }
 }

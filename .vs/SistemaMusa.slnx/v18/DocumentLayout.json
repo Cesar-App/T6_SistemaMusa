@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\admin\\source\\repos\\app.c#\\sistemamusa\\capapresentacion\\forminicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\forminicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\admin\\source\\repos\\app.c#\\sistemamusa\\capapresentacion\\formreportemedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formreportemedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\capapresentacion\\forminicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\forminicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\admin\\source\\repos\\app.c#\\sistemamusa\\capapresentacion\\formreportemedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formreportemedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\capapresentacion\\formreportecitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formreportecitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\admin\\source\\repos\\app.c#\\sistemamusa\\capapresentacion\\formreportemedicos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formreportemedicos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\capapresentacion\\formcitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formcitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\admin\\source\\repos\\app.c#\\sistemamusa\\capapresentacion\\formcitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formcitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\capapresentacion\\formreportecitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formreportecitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\admin\\source\\repos\\app.c#\\sistemamusa\\capapresentacion\\reportes\\reportcitas.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\reportes\\reportcitas.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7DC4F94-A624-45D1-8877-1E062E0A9798}|CapaEntidades\\CapaEntidades.csproj|C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\capaentidades\\pacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7DC4F94-A624-45D1-8877-1E062E0A9798}|CapaEntidades\\CapaEntidades.csproj|solutionrelative:capaentidades\\pacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C11BFEA9-57CE-4F8D-8755-717CD8A62275}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\capapresentacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,31 +70,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormInicio.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormInicio.cs",
-              "RelativeDocumentMoniker": "CapaPresentacion\\FormInicio.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormInicio.cs",
-              "RelativeToolTip": "CapaPresentacion\\FormInicio.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAuwDcAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "FormReporteMedicos.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormReporteMedicos.Designer.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormReporteMedicos.Designer.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormReporteMedicos.Designer.cs",
+              "RelativeToolTip": "CapaPresentacion\\FormReporteMedicos.Designer.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAQwDgAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T21:33:24.04Z",
+              "WhenOpened": "2026-05-28T03:54:47.314Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormInicio.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormInicio.cs",
-              "RelativeDocumentMoniker": "CapaPresentacion\\FormInicio.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormInicio.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CapaPresentacion\\FormInicio.cs [Dise\u00F1o]",
+              "Title": "FormReporteMedicos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormReporteMedicos.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormReporteMedicos.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormReporteMedicos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CapaPresentacion\\FormReporteMedicos.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T21:33:22.533Z"
+              "WhenOpened": "2026-05-28T03:54:43.968Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormReporteMedicos.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormReporteMedicos.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormReporteMedicos.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormReporteMedicos.cs",
+              "RelativeToolTip": "CapaPresentacion\\FormReporteMedicos.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAtwGEAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T03:53:33.153Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "FormReporteCitas.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormReporteCitas.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormReporteCitas.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormReporteCitas.cs",
+              "RelativeToolTip": "CapaPresentacion\\FormReporteCitas.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAApwBMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T02:02:17.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormCitas.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormCitas.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormCitas.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormCitas.cs",
+              "RelativeToolTip": "CapaPresentacion\\FormCitas.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAA7wHgBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T03:15:27.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormCitas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormCitas.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormCitas.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormCitas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CapaPresentacion\\FormCitas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T02:02:01.958Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormReporteCitas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormReporteCitas.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormReporteCitas.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\FormReporteCitas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CapaPresentacion\\FormReporteCitas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T01:32:28.751Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReportCitas.rdlc [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\Reportes\\ReportCitas.rdlc",
+              "RelativeDocumentMoniker": "CapaPresentacion\\Reportes\\ReportCitas.rdlc",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\Reportes\\ReportCitas.rdlc [Dise\u00F1o]",
+              "RelativeToolTip": "CapaPresentacion\\Reportes\\ReportCitas.rdlc [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2026-05-27T23:59:57.575Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Pacientes.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaEntidades\\Pacientes.cs",
+              "RelativeDocumentMoniker": "CapaEntidades\\Pacientes.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaEntidades\\Pacientes.cs",
+              "RelativeToolTip": "CapaEntidades\\Pacientes.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T02:16:47.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\App.C#\\SistemaMusa\\CapaPresentacion\\Program.cs",
               "RelativeDocumentMoniker": "CapaPresentacion\\Program.cs",
