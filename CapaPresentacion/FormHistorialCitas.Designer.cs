@@ -61,6 +61,8 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelInsert = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbCita = new System.Windows.Forms.ComboBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -75,8 +77,6 @@
             this.pbReiniciar = new System.Windows.Forms.PictureBox();
             this.dgvHistorialCitas = new System.Windows.Forms.DataGridView();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbCita = new System.Windows.Forms.ComboBox();
             this.panelSidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -162,6 +162,7 @@
             this.btnRoles.TabIndex = 10;
             this.btnRoles.Text = "Roles";
             this.btnRoles.UseVisualStyleBackColor = true;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // panel1
             // 
@@ -230,6 +231,7 @@
             this.btnUsuarios.TabIndex = 8;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnMedicos
             // 
@@ -364,6 +366,25 @@
             this.panelInsert.Name = "panelInsert";
             this.panelInsert.Size = new System.Drawing.Size(931, 247);
             this.panelInsert.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(409, 127);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 30);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Cita:";
+            // 
+            // cmbCita
+            // 
+            this.cmbCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCita.FormattingEnabled = true;
+            this.cmbCita.Location = new System.Drawing.Point(484, 127);
+            this.cmbCita.Name = "cmbCita";
+            this.cmbCita.Size = new System.Drawing.Size(187, 28);
+            this.cmbCita.TabIndex = 28;
             // 
             // dtpFecha
             // 
@@ -522,25 +543,6 @@
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(121, 28);
             this.cmbFiltro.TabIndex = 19;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(409, 127);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 30);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "Cita:";
-            // 
-            // cmbCita
-            // 
-            this.cmbCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCita.FormattingEnabled = true;
-            this.cmbCita.Location = new System.Drawing.Point(484, 127);
-            this.cmbCita.Name = "cmbCita";
-            this.cmbCita.Size = new System.Drawing.Size(187, 28);
-            this.cmbCita.TabIndex = 28;
             // 
             // FormHistorialCitas
             // 

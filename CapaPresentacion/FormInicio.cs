@@ -221,5 +221,26 @@ namespace CapaPresentacion
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            FormGestiondeRoles formRoles = new FormGestiondeRoles();
+            formRoles.ShowDialog();
+            this.Close();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FormGestiondeUsuarios formUsuarios = new FormGestiondeUsuarios();
+            formUsuarios.ShowDialog();
+            this.Close();
+        }
+
+        private void btnPacientes_Click(object sender, EventArgs e)
+        {
+            FormGestiondePacientes formPacientes = new FormGestiondePacientes();
+            formPacientes.ShowDialog();
+            this.Close();
+        }
     }
 }

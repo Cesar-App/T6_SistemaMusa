@@ -83,6 +83,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbfiltro = new System.Windows.Forms.ComboBox();
             this.dgvMedicos = new System.Windows.Forms.DataGridView();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.panelsidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -168,6 +169,7 @@
             this.btnRoles.TabIndex = 10;
             this.btnRoles.Text = "Roles";
             this.btnRoles.UseVisualStyleBackColor = true;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // panel1
             // 
@@ -236,6 +238,7 @@
             this.btnUsuarios.TabIndex = 8;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnMedicos
             // 
@@ -354,6 +357,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelinsert.BackColor = System.Drawing.Color.White;
             this.panelinsert.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelinsert.Controls.Add(this.btnReporte);
             this.panelinsert.Controls.Add(this.cbEspecialidad);
             this.panelinsert.Controls.Add(this.label3);
             this.panelinsert.Controls.Add(this.txtCorreo);
@@ -561,6 +565,20 @@
             this.dgvMedicos.Size = new System.Drawing.Size(1089, 224);
             this.dgvMedicos.TabIndex = 1;
             // 
+            // btnReporte
+            // 
+            this.btnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(88)))), ((int)(((byte)(118)))));
+            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnReporte.ForeColor = System.Drawing.Color.White;
+            this.btnReporte.Location = new System.Drawing.Point(497, 19);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(153, 37);
+            this.btnReporte.TabIndex = 25;
+            this.btnReporte.Text = "Ver Reporte";
+            this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
             // FormMedicos
             // 
             this.ClientSize = new System.Drawing.Size(1465, 908);
@@ -623,5 +641,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbEspecialidad;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnReporte;
     }
 }

@@ -65,8 +65,11 @@ namespace CapaPresentacion
                     nombre = m.Nombre,
                     apellido = m.Apellido,
                     especialidad = m.Nombre_Especialidad,
+                    nombre_especialidad = m.Nombre_Especialidad,
                     telefono = m.Telefono,
-                    email = m.Correo.ToString()
+                    email = m.Correo ?? string.Empty,
+                    correo = m.Correo ?? string.Empty,
+                    Correo = m.Correo ?? string.Empty
                 }).ToList();
 
                 var listae = especialidades.Select(s => new

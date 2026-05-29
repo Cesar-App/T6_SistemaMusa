@@ -20,19 +20,23 @@ namespace CapaDatos
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
+
+                // C#
+                var columnas = Enumerable.Range(0, dr.FieldCount)
+                    .Select(i => dr.GetName(i))
+                    .ToHashSet(StringComparer.OrdinalIgnoreCase);
+
                 while (dr.Read())
                 {
                     lista.Add(new Usuarios
                     {
-                        Id_Usuario = Convert.ToInt32(dr["id_usuario"]),
-                        Username = dr["username"].ToString(),
-                        Password = dr["password"].ToString(),
-                        Nombre = dr["nombre"].ToString(),
-                        Id_Rol = Convert.ToInt32(dr["id_rol"]),
-                        Estado = Convert.ToBoolean(dr["estado"]),
-
-                        // Para Mostrar los nombres en lugar de los IDs
-                        Nombre_Rol = dr["Nombre_Rol"].ToString(),
+                        Id_Usuario = columnas.Contains("id_usuario") ? Convert.ToInt32(dr["id_usuario"]) : 0,
+                        Username   = columnas.Contains("username")   ? dr["username"].ToString() : null,
+                        Password   = columnas.Contains("password")   ? dr["password"].ToString() : null,
+                        Nombre     = columnas.Contains("nombre")     ? dr["nombre"].ToString() : null,
+                        Id_Rol     = columnas.Contains("id_rol")     ? Convert.ToInt32(dr["id_rol"]) : 0,
+                        Estado     = columnas.Contains("estado")     ? Convert.ToBoolean(dr["estado"]) : false,
+                        Nombre_Rol = columnas.Contains("Nombre_Rol") ? dr["Nombre_Rol"].ToString() : null,
                     });
                 }
             }

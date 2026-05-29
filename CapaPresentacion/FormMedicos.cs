@@ -312,5 +312,25 @@ namespace CapaPresentacion
             formHorarios.Show();
             this.Close();
         }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FormGestiondeUsuarios formUsuarios = new FormGestiondeUsuarios();
+            formUsuarios.Show();
+            this.Close();
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            FormGestiondeRoles formRoles = new FormGestiondeRoles();
+            formRoles.Show();
+            this.Close();
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            FormReporteMedicos formReporte = new FormReporteMedicos();
+            formReporte.Show();
+        }
     }
 }

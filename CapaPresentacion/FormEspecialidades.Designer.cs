@@ -157,6 +157,7 @@
             this.btnRoles.TabIndex = 10;
             this.btnRoles.Text = "Roles";
             this.btnRoles.UseVisualStyleBackColor = true;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // panel1
             // 
@@ -225,6 +226,7 @@
             this.btnUsuarios.TabIndex = 8;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnMedicos
             // 

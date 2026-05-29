@@ -35,7 +35,7 @@
             // 
             this.rvMedicos.AutoSize = true;
             this.rvMedicos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvMedicos.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.ReportCitas.rdlc";
+            this.rvMedicos.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.ReportMedicos.rdlc";
             this.rvMedicos.Location = new System.Drawing.Point(0, 0);
             this.rvMedicos.Name = "rvMedicos";
             this.rvMedicos.ServerReport.BearerToken = null;

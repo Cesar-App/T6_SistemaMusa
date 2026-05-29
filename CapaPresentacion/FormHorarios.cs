@@ -325,5 +325,19 @@ namespace CapaPresentacion
             formHistorial.Show();
             this.Close();
         }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FormGestiondeUsuarios formUsuarios = new FormGestiondeUsuarios();
+            formUsuarios.Show();
+            this.Close();
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            FormGestiondeRoles formRoles = new FormGestiondeRoles();
+            formRoles.Show();
+            this.Close();
+        }
     }
 }

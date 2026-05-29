@@ -64,9 +64,14 @@ namespace CapaPresentacion
                     id_medico = m.Id_Medico,
                     nombre = m.Nombre,
                     apellido = m.Apellido,
+                    // Exponer con varios nombres por si el .rdlc usa nombres distintos
                     especialidad = m.Nombre_Especialidad,
+                    nombre_especialidad = m.Nombre_Especialidad,
                     telefono = m.Telefono,
-                    email = m.Correo.ToString()
+                    // Evitar ToString() directo y ofrecer varias variantes de nombre
+                    email = m.Correo ?? string.Empty,
+                    correo = m.Correo ?? string.Empty,
+                    Correo = m.Correo ?? string.Empty
                 }).ToList();
 
                 var listae = especialidades.Select(s => new
